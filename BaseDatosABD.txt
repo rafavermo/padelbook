@@ -1,0 +1,73 @@
+DROP TABLE if exists Eventos;
+DROP TABLE if exists UsuarioGrupos;
+DROP TABLE if exists CentroPistas;
+DROP TABLE if exists Usuarios;
+DROP TABLE if exists Grupos;
+DROP TABLE if exists Centros;
+DROP TABLE if exists Pistas;
+
+
+
+
+CREATE TABLE Usuarios (
+        usuarioID int NOT NULL AUTO_INCREMENT,
+        nombre varchar(50) NOT NULL, 
+        apellidos varchar(50) NOT NULL,           
+    	usuario varchar(50) NOT NULL,
+		password varchar(50) NOT NULL,
+        fechaNacimiento datetime, 
+		ciudad varchar(50),
+		email varchar(50) NOT NULL,
+PRIMARY KEY (usuarioID));
+
+CREATE TABLE Centros (
+        centroID int NOT NULL AUTO_INCREMENT,
+        nombre varchar(50) NOT NULL, 
+        numeroPistas int NOT NULL,           
+        direccion varchar(100) NOT NULL,
+	ciudad varchar(50) NOT NULL,
+PRIMARY KEY (centroID));
+
+CREATE TABLE Pistas (
+        pistaID int NOT NULL AUTO_INCREMENT,
+        descripcion varchar(100),
+PRIMARY KEY (pistaID));
+
+
+
+CREATE TABLE Grupos (
+        grupoID int NOT NULL AUTO_INCREMENT,       
+        nombre varchar(50) NOT NULL,
+        descripcion varchar(200),
+PRIMARY KEY (grupoID));
+
+
+
+CREATE TABLE UsuarioGrupos (
+        usuarioID int NOT NULL,
+        grupoID int NOT NULL,        
+PRIMARY KEY (usuarioID, grupoID),
+FOREIGN KEY (usuarioID) REFERENCES Usuarios (usuarioID),
+FOREIGN KEY (grupoID) REFERENCES Grupos (grupoID));
+
+
+CREATE TABLE CentroPistas (
+        centroID int NOT NULL,
+        pistaID int NOT NULL,        
+PRIMARY KEY (centroID, pistaID),
+FOREIGN KEY (centroID) REFERENCES Centros (centroID),
+FOREIGN KEY (pistaID) REFERENCES Pistas (pistaID));
+
+
+CREATE TABLE Eventos (
+	usuarioID int NOT NULL,
+        centroID int NOT NULL,
+        pistaID int NOT NULL,
+        fecha datetime NOT NULL, 
+	propietario boolean DEFAULT '0',              
+
+PRIMARY KEY (usuarioID, fecha),
+FOREIGN KEY (usuarioID) REFERENCES Usuarios (usuarioID),
+FOREIGN KEY (centroID) REFERENCES CentroPistas (centroID),
+FOREIGN KEY (pistaID) REFERENCES CentroPistas (pistaID)); 
+

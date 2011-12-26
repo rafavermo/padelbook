@@ -1,0 +1,96 @@
+body{
+	width: 80%;
+	
+margin-left : auto;
+margin-right : auto;
+padding : 0px;
+	
+}
+
+div{
+	border: thin solid black;
+	 
+}
+
+#logo{
+	background-color: RGB(238,232,170);
+	height:3ex;
+}
+#header{
+	background-color: RGB(34,139,34);
+	height: 22ex;
+}
+#logotipo{
+	background-clip: border-box;
+	background-color:#008000;
+	float: left;
+	clear:left;
+}
+#columna_izquierda{
+	background-color:RGB(46,139,87);
+	float: left;
+	height: 85ex;
+	width: 20%;
+}
+#contenido{
+	background-color:  RGB(248,248,255);
+	overflow: hidden;
+	min-height: 85ex;
+	height: auto;
+	
+}
+#columna_derecha{
+	background-color:  RGB(152,251,152);
+	float:right;
+	height: 85ex;
+	width: 20%;
+}
+#pie{
+	background-color:  RGB(255,255,153);
+	clear: both;
+	
+}
+
+#divNombre{
+
+ border:0;
+
+	
+}
+#divUsuario{
+ border:0;
+}
+
+#divApellidos{
+	border:0;
+}
+
+#divPassword{
+	border:0;
+}
+
+#divFecha{
+	border:0;
+}
+
+#divCiudad{
+	border:0;
+}
+
+#divCorreo{
+	border:0;
+}
+
+#divTransparente{
+	border: 3px solid;
+	color:red;
+	display: none;
+	color=red;
+}
+
+#divmenuConJavascript{
+    border:0;
+	display: none;
+
+}
+
