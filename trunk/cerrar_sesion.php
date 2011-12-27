@@ -1,8 +1,11 @@
 <?php
 
+ session_start();
+
+ unset($_SESSION["usuario"]);
  session_destroy();
  
- header('Location: http://localhost/proyecto_ABD/index.php');
+ header('Location:index.php');
 
 
 ?>
