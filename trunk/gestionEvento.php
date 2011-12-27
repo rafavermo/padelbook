@@ -2,13 +2,13 @@
 
 // /* Insertando datos en la tabla usuarios */  
 //  
-// function insertarUsuario($nombre,$apellidos,$usuario,$password,$fechaNacimiento,$ciudad,$email,$conexion)
+// function insertarEvento($usuarioID,$centroID,$pistaID,$fecha,$propietario,$conexion)
 // {
 	// try{
-		// $fechaNacimiento1= explode("/",$fechaNacimiento);
-		// $dia=$fechaNacimiento1[0];
-		// $mes=$fechaNacimiento1[1];
-		// $anyo=$fechaNacimiento1[2];
+		// $fecha1= explode("/",$fecha);
+		// $dia=$fecha1[0];
+		// $mes=$fecha1[1];
+		// $anyo=$fecha1[2];
 		// $fecha = new DateTime("$anyo-$mes-$dia");
 	    // $sfecha=$fecha->format('Y-m-d H:i:s');
 		// $sql='INSERT INTO Usuarios (nombre,apellidos,usuario,password,fechaNacimiento,ciudad,email) VALUES(:nombre,:apellidos,:usuario,:password,:fechaNacimiento,:ciudad,:email)';
@@ -43,7 +43,7 @@ function nombresDeCentrosPorCiudad($ciudad, $conexion)
 function pistasPorCentros($centroID, $conexion)
 {
 	try{
-		$stmt=$conexion->prepare('SELECT centroID,pistaID,descripcion FROM CentroPistas INNER JOIN Pistas WHERE CentroPistas.pistaID=Pistas.pistaID AND centroID=:centroID ');
+		$stmt=$conexion->prepare('SELECT centroID,pistaID,descripcion FROM CentroPistas INNER JOIN Pistas WHERE CentroPistas.pistaID=Pistas.pistaID AND centroID=:centroID');
 		$stmt->bindParam(':centroID',$centroId);
 		$stmt->execute();
 	}catch(PDOException $e){
@@ -61,20 +61,6 @@ function nombresDeCiudades($conexion)
 		return false;
 	}
 	return $stmt;
- }
-
-//Devuelve 1 si el usuario y su contraseña coinciden
- function validaUsuarioYPassword($usuario,$password,$conexion)
-{
-	try{
-		$stmt=$conexion->prepare('SELECT * FROM Usuarios WHERE usuario=:usuario AND password=:password');
-		$stmt->bindParam(':usuario',$usuario);
-		$stmt->bindParam(':password',$password);
-		$stmt->execute();
-	}catch(PDOException $e){
-		return false;
-	}
-	return $stmt->rowCount();
  }
 
 
