@@ -19,6 +19,11 @@ function videos(){
 	cargaContenido("videos.html","GET",muestraContenido);	
 }
 
+function eventos() {
+	//se le pasan 3 parámetros: la pagina que queremos descargar del servidor, el metodo y la funcion que muestra. en este caso lo muestra en el div de contenido
+  cargaContenido("crear_evento.php", "GET", muestraContenido);
+}
+
 function cargaContenido(url, metodo, funcion) {
 
 	 //instanciamos el objeto XMLHttpRequest

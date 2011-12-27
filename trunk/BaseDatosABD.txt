@@ -25,7 +25,7 @@ CREATE TABLE Centros (
         nombre varchar(50) NOT NULL, 
         numeroPistas int NOT NULL,           
         direccion varchar(100) NOT NULL,
-	ciudad varchar(50) NOT NULL,
+	    ciudad varchar(50) NOT NULL,
 PRIMARY KEY (centroID));
 INSERT INTO Centros(nombre, numeroPistas, direccion, ciudad)  VALUES ('Centro Deportivo Bami', '2', 'Castillo de Cortegana, s/n','Sevilla');
 INSERT INTO Centros(nombre, numeroPistas, direccion, ciudad)  VALUES ('Centro Deportivo Bermejales II', '4', 'Bolonia, s/n','Sevilla');
