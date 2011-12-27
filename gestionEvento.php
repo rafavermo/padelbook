@@ -43,7 +43,7 @@ function nombresDeCentrosPorCiudad($ciudad, $conexion)
 function pistasPorCentros($centroID, $conexion)
 {
 	try{
-		$stmt=$conexion->prepare('SELECT * FROM CentroPistas INNER JOIN Pistas WHERE CentroPistas.pistaID=Pistas.pistaID AND centroID=:centroID ');
+		$stmt=$conexion->prepare('SELECT centroID,pistaID,descripcion FROM CentroPistas INNER JOIN Pistas WHERE CentroPistas.pistaID=Pistas.pistaID AND centroID=:centroID ');
 		$stmt->bindParam(':centroID',$centroId);
 		$stmt->execute();
 	}catch(PDOException $e){
