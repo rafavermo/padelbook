@@ -10,9 +10,8 @@ $contenido="";
 
 
  if(isset($_SESSION["errores"])){
-  $errores=array();	
-  $errores=$_SESSION["errores"];
- }
+    $errores=$_SESSION["errores"];
+  }
  
 ?>
 
@@ -39,8 +38,9 @@ $contenido="";
 	<h1>Mi sitio web</h1>
 </div>
  
-<div id="logo">
-
+<div id="cabecera_fina">
+	
+  <?php include_once("cabecera_fina.php"); ?>
 
 </div>
 
@@ -67,12 +67,15 @@ $contenido="";
 <div id="contenido">
 	
 <?php
+ 
+  
    //si existen errores por la validacion PHP por parte del servidor en el registro los imprimimos
 	if(isset($_SESSION["errores"]) && count($_SESSION["errores"])>0 ){
-	 
 	  
       foreach($errores as $elemento){
-	  	  echo $elemento;
+      	//echo "-----" . count($_SESSION["errores"]);
+      	//for($i=0;$i<=count($_SESSION["errores"]);$i++){
+	  	   printf("$elemento");
 	   }
     }
 	//Destruimos la variable con los errores
