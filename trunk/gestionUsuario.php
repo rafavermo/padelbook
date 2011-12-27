@@ -27,6 +27,7 @@ function insertarUsuario($nombre,$apellidos,$usuario,$password,$fechaNacimiento,
 	return $stmt;
  }
 
+//Devuelve 1 si el usuario ya existe
 function seleccionarExiteUsuario($usuario,$conexion)
 {
 	try{
@@ -38,6 +39,22 @@ function seleccionarExiteUsuario($usuario,$conexion)
 	}
 	return $stmt->rowCount();
  }
+
+//Devuelve 1 si el usuario y su contraseña coinciden
+ function validaUsuarioYPassword($usuario,$password,$conexion)
+{
+	try{
+		$stmt=$conexion->prepare('SELECT * FROM Usuarios WHERE usuario=:usuario AND password=:password');
+		$stmt->bindParam(':usuario',$usuario);
+		$stmt->bindParam(':password',$password);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt->rowCount();
+ }
+
+
 	
 	
 ?>

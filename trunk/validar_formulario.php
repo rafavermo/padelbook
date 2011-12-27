@@ -3,6 +3,9 @@
  include_once("gestionBD.php");
  include_once("gestionUsuario.php");
  $formulario=$_SESSION["formulario"];
+ 
+
+ 
  $errores=$_SESSION["errores"];
   if(isset($formulario)){
   	 //Recogemos todos los datos
@@ -58,6 +61,23 @@
 	   if( !(isset($formulario["correo"]) && strlen($formulario["correo"])>0 && preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/",$formulario["correo"]) )){
 	   	 $errores[]='<font color="red">El campo <b>correo</b> no puede ser vacio o no cumple el patron determinado</font><p>';
 	   }
+	   
+	    //tratamiento de fecha
+           
+            list($dia,$mes,$year) = explode("/",$formulario["fecha_nacimiento"]);
+           
+           if(isset($formulario["fecha_nacimiento"]) && $formulario["fecha_nacimiento"]!=""){
+                         if(! (strlen($formulario["fecha_nacimiento"])>7 && strlen($formulario["fecha_nacimiento"])<11 && checkdate($mes,$dia, $year)  ) ) {
+                             $errores[]='<font color="red">El campo <b>fecha</b> no cumple el patron determinado</font><p>';                    
+                          }
+           }
+	       
+		   if($formulario["fecha_nacimiento"]==""){
+		   	   $_SESSION["formulario"]["fecha_nacimiento"]="00/00/0000";
+		   }
+	   
+	   
+	   //Conexion con la base de datos para ver si el nombre de usuario ya esta en uso
 	    $conexion=conectaBASEDATOS();
 		$existeUsuario = seleccionarExiteUsuario($formulario["usuario"],$conexion);
 		desconectaBASEDATOS($conexion);
