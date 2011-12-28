@@ -42,11 +42,11 @@
    
    function validar($formulario){
    	  
-	   if( !(isset($formulario["nombre"]) && strlen($formulario["nombre"])>0 ) ){
-	   	 $errores[]='<font color="red">El campo <b>nombre</b> no puede ser vacio</font><p>';
+	   if( !(isset($formulario["nombre"]) && strlen($formulario["nombre"])>0 && preg_match("/^([a-zA-Z])+([a-zA-Z\ ])*+$/",$formulario["nombre"]))){
+	   	 $errores[]='<font color="red">El campo <b>nombre</b> no puede ser vacio o tiene formato no valido</font><p>';
 	   }
 	
-	   if( !(isset($formulario["apellidos"]) && strlen($formulario["apellidos"])>0 ) ){
+	   if( !(isset($formulario["apellidos"]) && strlen($formulario["apellidos"])>0  && preg_match("/^([a-zA-Z])+([a-zA-Z\ ])*+$/",$formulario["apellidos"]))){
 	   	 $errores[]='<font color="red">El campo <b>apellidos</b> no puede ser vacio</font><p>';
 	   }
 	   
