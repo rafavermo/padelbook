@@ -29,7 +29,7 @@
 function nombresDeCentrosPorCiudad($ciudad, $conexion)
 {
 	try{
-		$stmt=$conexion->prepare('SELECT nombre FROM Centros WHERE ciudad=:ciudad');
+		$stmt=$conexion->prepare('SELECT centroID,nombre FROM Centros WHERE ciudad=:ciudad');
 		$stmt->bindParam(':ciudad',$ciudad);
 		$stmt->execute();
 	}catch(PDOException $e){
