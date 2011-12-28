@@ -64,7 +64,7 @@ function valida_formulario(F) {
         	res = false;
         }
         
-        if(   !validaFecha(F.fecha_nacimiento.value) ){
+        if(   !validaFecha(F.fecha_nacimiento.value) && F.fecha_nacimiento.value!=""){
         	document.getElementById('divFecha').style.color='red';
         	mensaje_error = mensaje_error + '<font color="red">Introduzca una fecha valida!</font><p>';
         	res = false;

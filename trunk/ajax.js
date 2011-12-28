@@ -58,6 +58,8 @@ function muestraContenido() {
   }
 }
 
+
+
 function mostrarMenuConJavascript(){
 	var menu=document.getElementById("divmenuConJavascript");
 	menu.style.display='block';
@@ -80,7 +82,7 @@ function mostrarMenuConJavascript(){
 
     horaImprimible = hora + " : " + minuto + " : " + segundo
 
-    document.form_reloj.reloj.value = horaImprimible
+    document.reloj.value = horaImprimible
 
     setTimeout("mostrarMenuConJavascript()",1000)
 
