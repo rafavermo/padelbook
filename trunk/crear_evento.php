@@ -28,7 +28,7 @@
 
 <form name="formulario_ciudad"  method="get" action="index.php" > 	
 
-<select name="ciudad" onchange="this.form.submit()">
+Seleccione la ciudad del evento:<select name="ciudad" onchange="this.form.submit()">
 	<option selected> </option>
 	<?php
 	
@@ -38,7 +38,7 @@
 	   foreach($ciudades as $ciudad){
 	   	
 	 ?>
-	   <option value='<?=$ciudad["ciudad"]?>'><?=$ciudad["ciudad"]?></option>  	
+	   <option value='<?=$ciudad["ciudad"]?>'  <?php  if(isset($_SESSION["ciudad"]) && $_SESSION["ciudad"]==$ciudad["ciudad"]){?> selected <?php } ?> > <?=$ciudad["ciudad"]?> </option>  	
 			
 	<?php } ?>
 	
@@ -50,7 +50,7 @@
 
 <form name="formulario_centros"  method="get" action="index.php" >
 	
-<select name="centro" onchange="this.form.submit()">
+Seleccione el centro deportivo:<select name="centro" onchange="this.form.submit()">
 	<option selected> </option>
 	<?php
 	   
@@ -61,7 +61,7 @@
 	   foreach($centros as $centro){
 	   
 	 ?>
-	   <option value='<?=$centro["centroID"]?>'><?=$centro["nombre"]?></option>  
+	   <option value='<?=$centro["centroID"]?>' <?php  if(isset($_SESSION["centroID"]) && $_SESSION["centroID"]==$centro["centroID"]){?> selected <?php } ?>  ><?=$centro["nombre"]?></option>  
 			
 	<?php } ?>
 	
