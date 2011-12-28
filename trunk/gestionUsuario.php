@@ -57,8 +57,10 @@ function seleccionarExiteUsuario($usuario,$conexion)
 function seleccionaUsuarioIDporNombre($nombreUsuario, $conexion)
 {
 	try{
+
 		$stmt=$conexion->prepare('SELECT usuarioID FROM Usuarios WHERE usuario=:usuario');
 		$stmt->bindParam(':usuario',$nombreUsuario);
+
 		$stmt->execute();
 	}catch(PDOException $e){
 		return false;
