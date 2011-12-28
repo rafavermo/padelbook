@@ -1,31 +1,29 @@
 <?php
 
-// /* Insertando datos en la tabla usuarios */  
-//  
-// function insertarEvento($usuarioID,$centroID,$pistaID,$fecha,$propietario,$conexion)
-// {
-	// try{
+ /* Insertando datos en la tabla Eventos */  
+  
+ function insertarEvento($usuarioID,$centroID,$pistaID,$fecha,$propietario,$conexion)
+ {
+ try{
 		// $fecha1= explode("/",$fecha);
 		// $dia=$fecha1[0];
 		// $mes=$fecha1[1];
 		// $anyo=$fecha1[2];
 		// $fecha = new DateTime("$anyo-$mes-$dia");
 	    // $sfecha=$fecha->format('Y-m-d H:i:s');
-		// $sql='INSERT INTO Usuarios (nombre,apellidos,usuario,password,fechaNacimiento,ciudad,email) VALUES(:nombre,:apellidos,:usuario,:password,:fechaNacimiento,:ciudad,:email)';
-		// $stmt=$conexion->prepare($sql);
-		// $stmt->bindParam(':nombre',$nombre);
-		// $stmt->bindParam(':apellidos',$apellidos);
-		// $stmt->bindParam(':usuario',$usuario);
-		// $stmt->bindParam(':password',sha1($password));
-		// $stmt->bindParam(':fechaNacimiento',$sfecha);
-		// $stmt->bindParam(':ciudad',$ciudad);
-		// $stmt->bindParam(':email',$email);
-		// $stmt->execute();
-	// }catch(PDOException $e){
-		// return false;
-	// }
-	// return $stmt;
- // }
+		$sql='INSERT INTO Eventos (usuarioID,centroID,pistaID,fecha,propietario) VALUES(:usuarioID,:centroID,:pistaID,:fecha,:propietario)';
+		$stmt=$conexion->prepare($sql);
+		$stmt->bindParam(':usuarioID',$usuarioID);
+		$stmt->bindParam(':centroID',$centroID);
+		$stmt->bindParam(':pistaID',$pistaID);
+		$stmt->bindParam(':fecha',$fecha);
+		$stmt->bindParam(':propietario',$propietario);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }
 
 
 function nombresDeCentrosPorCiudad($ciudad, $conexion)
@@ -62,8 +60,5 @@ function nombresDeCiudades($conexion)
 	}
 	return $stmt;
  }
-
-
-	
 	
 ?>
