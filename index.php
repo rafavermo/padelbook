@@ -25,6 +25,7 @@ $contenido="";
     <link rel="stylesheet" type="text/css" title="Original" href="estilo/Estilo_principal.css" />
     <script type="text/javascript" src="ajax.js" ></script>
     <script type="text/javascript" src="valida_formulario.js" ></script>
+    <script type="text/javascript" src="crea_evento.js" ></script>
 </head>
 
   
