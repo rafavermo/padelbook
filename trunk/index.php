@@ -7,8 +7,8 @@ $contenido="";
   if(isset($_SESSION["contenido"])){
     $contenido=$_SESSION["contenido"];
   }
-
-
+  
+ 
  if(isset($_SESSION["errores"])){
     $errores=$_SESSION["errores"];
   }
@@ -82,7 +82,7 @@ $contenido="";
 	//Destruimos la variable con los errores
 	unset($_SESSION["errores"]);
 
-   //incluyo en el div contenido, el contenido de la pagina especificada por $contenido (variable de sesion)
+   //incluye en el div contenido, el contenido de la pagina especificada por $contenido (variable de sesion)
    if($contenido!=""){
      include_once($contenido);
    }	   

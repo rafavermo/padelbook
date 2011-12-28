@@ -1,6 +1,6 @@
 
 
-
+var enviar =true;
 
 //Desactivado por defecto
 	//document.formulario_crea_evento.centros.disable=true;
@@ -9,19 +9,15 @@
 document.getElementById('IDcentros').style.disable='true';
 
 
-function selecciona_ciudad(){
+//function selecciona_ciudad(this){
 	
-	alert("hola");
+	//var seleccion = document.formulario_crea_evento.ciudad.value;
 	
-	
-	
-	var seleccion = document.formulario_crea_evento.ciudad.value;
+	//return true;
 	
 	
 	
-	
-	
-}
+//}
 
 
 function selecciona_ciudad(){
