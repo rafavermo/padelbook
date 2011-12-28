@@ -25,11 +25,19 @@ $contenido="";
     <link rel="stylesheet" type="text/css" title="Original" href="estilo/Estilo_principal.css" />
     <script type="text/javascript" src="ajax.js" ></script>
     <script type="text/javascript" src="valida_formulario.js" ></script>
+
+    
+    
+
+
+=======
     <script type="text/javascript" src="crea_evento.js" ></script>
+
 </head>
 
   
 <body onload=mostrarMenuConJavascript();>
+	 
 		
 	<div id="logotipo">
 		logo
@@ -40,6 +48,9 @@ $contenido="";
 </div>
  
 <div id="cabecera_fina">
+	<form name="form_reloj"> 
+<input type="text" name="reloj" size="10" style="background-color : Black; color : White; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;" onfocus="window.document.form_reloj.reloj.blur()"> 
+</form>
 	
   <?php include_once("cabecera_fina.php"); ?>
 
