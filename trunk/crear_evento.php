@@ -6,7 +6,11 @@
 
  CREA TU EVENTO
 
-<select name="ciudad">
+
+<form name="formulario_crea_evento" action="valida_evento.php" method="post" > 	
+ 	
+<select name="ciudad" onChange="    " >
+	<option selected> </option>
 	<?php
 	
 	   $conexion=conectaBASEDATOS();
@@ -22,7 +26,8 @@
 </select> 
 
 
-<select name="centros">
+<select name="centros" id="IDcentros">
+	<option selected> </option>
 	<?php
 	   
 	   $ciudad="Sevilla";
@@ -39,17 +44,29 @@
 </select> 
 
 
- <select name="pistas">
-	<?php 
-	   $centroID='2' ;
+<select name="pistas" onchange="selecciona_pista();">
+	<option selected> </option>
+	<?php
+	   
+	   $centroID="2";
+	  
 	   $pistas=pistasPorCentros($centroID, $conexion);
-	   desconectaBASEDATOS($conexion);
-	   foreach($pistas as $pista){  	
+	
+	   foreach($pistas as $pista){
+	   	
 	 ?>
-	   <option value='<?=$pista["pistaID"]?>'><?=$pista["pistaID"]?></option>  	
+	   <option value='<?=$pista["pistaID"]?>'><?=$pista["descripcion"]?></option>  	
 			
 	<?php } ?>
 	
 </select> 
+
+
+
+<p><input type="submit" value="Crear Evento">
+</form>
+
+
+ 
 
 
