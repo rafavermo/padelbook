@@ -5,7 +5,7 @@
 ?>
 
  CREA TU EVENTO
- <p>
+
 <select name="ciudad">
 	<?php
 	
