@@ -28,7 +28,7 @@
 
 <form name="formulario_ciudad"  method="post" action="index.php" > 	
 
-Seleccione la ciudad del evento:<select name="ciudad" onchange="this.form.submit()">
+Seleccione la ciudad del evento:<select name="ciudad" id="ciudad" onchange="this.form.submit()">
 	<option selected> </option>
 	<?php
 	
@@ -50,7 +50,7 @@ Seleccione la ciudad del evento:<select name="ciudad" onchange="this.form.submit
 
 <form name="formulario_centros"  method="post" action="index.php" >
 	
-Seleccione el centro deportivo:<select name="centro" onchange="this.form.submit()">
+Seleccione el centro deportivo:<select name="centro" id="centro" onchange="this.form.submit()">
 	<option selected> </option>
 	<?php
 	   
@@ -72,7 +72,9 @@ Seleccione el centro deportivo:<select name="centro" onchange="this.form.submit(
 
 <form name="formulario_pistas"  method="get" action="index.php" >
 
-Seleccione la pista:<select name="pistas" onchange="this.form.submit()">
+
+Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit()">
+
 	<option selected> </option>
 	<?php
 	   
