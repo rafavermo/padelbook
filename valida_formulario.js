@@ -79,6 +79,29 @@ function valida_formulario(F) {
 }  
 
 
+function valida_crea_evento(formulario){
+ 	
+ 	var res=true;
+ 	
+ 	var mensaje_error = " ";
+ 	
+ 	 //Usamos las mismas funciones que en valida_formulario del registro
+ 	  if( !validaFecha(formulario.fecha.value) || formulario.fecha.value==""){
+        	document.getElementById('FechaCreaEvento').style.color='red';
+        	mensaje_error = mensaje_error + '<font color="red">Debe introducir una fecha valida!</font><p>';
+        	res = false;
+        }
+        
+       //mostramos la varible mensaje_error en formato HTML en el divTransparente 
+        muestraMensajeError(mensaje_error);
+        
+      return res; 
+ 	
+ }
+
+
+
+
 
 
 //--------------Funciones----------------------------------//
