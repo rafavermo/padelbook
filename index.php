@@ -42,21 +42,17 @@ $contenido="";
 </div>
  
 <div id="cabecera_fina">
-	<!--<form name="form_reloj"> --> 
-<input type="text" name="reloj" size="10" style="background-color : Yellow; color : Black; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;" onfocus="window.document.reloj.blur()"> 
-   <!-- </form> -->
-	
+	 
   <?php include_once("cabecera_fina.php"); ?>
 
 </div>
 
 <div id="columna_izquierda">
   
-
 <noscript><?php include("menuindexsinjavascript.html");?> </noscript>
 
 <!--div trasnparente que se muestra si esta activado javascript -->
- <div id="divmenuConJavascript">
+ <div id="divmenuConJavascript" >
  	<?php include("menuindexconjavascript.html");?>
  </div>	
 	
