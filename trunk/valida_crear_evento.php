@@ -1,3 +1,4 @@
+
 <?php
  session_start();
  include_once("gestionBD.php");
@@ -18,11 +19,11 @@
 	 $mes=$fecha1[1];
 	 $anyo=$fecha1[2];
 	 $hora=$_REQUEST["hora"];
-	 if(!(strlen($fecha)>7 && strlen($fecha)<11 && checkdate($mes,$dia,$anyo))){
-	 	$errores[]='<font color="red">El campo <b>fecha</b> no cumple el patron determinado DD/MM/YYYY</font><p>';
-	 }else{
-	 	$sfecha=$anyo."-".$mes."-".$dia." ".$hora.":"."00";
-	 }
+	     if(!(strlen($fecha)>7 && strlen($fecha)<11 && checkdate($mes,$dia,$anyo))){
+	 	     $errores[]='<font color="red">El campo <b>fecha</b> no cumple el patron determinado DD/MM/YYYY</font><p>';
+	      }else{
+	        	$sfecha=$anyo."-".$mes."-".$dia." ".$hora.":"."00";
+	      }
 	 
   	 
   	 //Recogemos todos los datos
@@ -36,9 +37,9 @@
 	 $evento=consultaExisteEvento($centroID,$pistaID,$sfecha,$conexion);
   	 desconectaBASEDATOS($conexion);
   	 
-	 if($evento->rowCount()!=0){
-		$errores[]='<font color="red">Ya existe un <b>evento</b> con las opciones elegidas</font><p>';
-	 }
+	   if($evento->rowCount()!=0){
+	    	$errores[]='<font color="red">Ya existe un <b>evento</b> con las opciones elegidas</font><p>';
+	    }
 	
 	 foreach ($usuarioID as $id){
 	 	  $_SESSION["usuarioID"]=$id["usuarioID"];
@@ -52,21 +53,18 @@
 		 
 	$_SESSION["crea_evento"]=$formularioEvento;
 	
-	//Si encontramos errores del formulario
-   if(count($errores) > 0){
-   	 $_SESSION["errores"] = $errores;
-	 Header("Location: index.php");  
+		//Si encontramos errores del formulario
+  		 if(count($errores) > 0){
+   			 $_SESSION["errores"] = $errores;
+			 Header("Location: index.php");  
+ 		  }else{
+    		 //Si no hay errores
+   			 Header("Location: exitocrearevento.php");
+  		  } 
+	
    }else{
-     //Si no hay errores
-   	 Header("Location: exitocrearevento.php");
-   } 
-	
- }else{
- 	Header("Location: index.php");
- }
-	
-	
-	
+ 	  Header("Location: index.php");
+   }
 	
 	
 	    
