@@ -24,8 +24,13 @@
   }
   
 ?>
+<!-- Para mostrar errores del javascript -->
+<div id="divTransparente">
+  		 	
+</div>
 
- CREA TU EVENTO
+<fieldset>
+            <legend><b> DATOS DEL EVENTO</b></legend>
 
 
 <form name="formulario_ciudad"  method="post" action="index.php" > 	
@@ -72,7 +77,7 @@ Seleccione el centro deportivo:<select name="centro" id="centro" onchange="this.
 </form>
 
 
-<form name="formulario_pistas"  method="get" action="index.php" >
+<form name="formulario_pistas"  method="post" action="index.php" >
 
 
 Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit()">
@@ -93,23 +98,50 @@ Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit
 
 </form>
 
-
- <form name="crea_evento" action="valida_crear_evento.php" method="get">
+<!--Formulario de envio del envento a crear -->
+ <form name="crea_evento" action="valida_crear_evento.php" method="get" onSubmit="return valida_crea_evento(this);">
  	
  	<input type="hidden" name="centroID" id="centroID" value='<?=$_SESSION["centroID"]?>' /> 
  	<input type="hidden" name="pistaID" id="pistaID" value='<?=$_SESSION["pistaID"]?>' />
  	
- 	Fecha:<input type="text" name="fecha" id="fecha">
- 	Hora:<input type="text" name="hora" id="hora">
- 	
-     <!--<select name="hora2">
- 		    <?php $hora=date("H:i");  for($i=1;$i<=48;$i++){    } ?>
+ 	<div id="FechaCreaEvento"> Fecha:<input type="text" name="fecha" id="fecha"> </div>
+ 	Hora:<select name="hora" id="hora">
+ 		    <?php 
+ 		    //mktime(hour,minute,second,month,day,year,is_dst)
+ 		      $inicial=mktime(6,0,0,0,0);
+   
+                   for($i=0;$i<41;$i++){
+   
+                   $hora = date("H:i",$inicial);	
+	
+	          ?>
+	               <option value='<?=$hora?>'> <?=$hora?> </option>
+	               	
+             <?php $inicial=mktime(date("H",$inicial),date("i",$inicial)+30,0,0,0);
+				   }
+ 		      ?>
  		  
- 	   </select> -->
+ 	   </select> 
  	
  	<p><input type="submit" value="Crear Evento" >
  </form>
 
+</fieldset>
+
+<?php
+
+  $formularioEvento=$_SESSION["crea_evento"];
+
+    $formularioEvento["centroID"]="";
+ 	$formularioEvento["pistaID"]="";
+ 	$formularioEvento["fecha"]=""; 
+	$formularioEvento["hora"]="";
+	
+ $_SESSION["crea_evento"]=$formularioEvento;
+
+?>
+
+ 
 
 
 
