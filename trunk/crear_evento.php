@@ -109,7 +109,13 @@ Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit
  	<input type="hidden" name="centroID" id="centroID" value='<?=$_SESSION["centroID"]?>' /> 
  	<input type="hidden" name="pistaID" id="pistaID" value='<?=$_SESSION["pistaID"]?>' />
  	
- 	<div id="FechaCreaEvento"> Fecha:<input type="text" name="fecha" id="fecha"> </div>
+ 
+ 	
+ 	   <div id="FechaCreaEvento"> 
+ 	   	Fecha: <input type="text" name="fecha" id="fecha" value="<dd/mm/aaaa>"/> 
+ 	   </div>
+ 	
+ 	
  	Hora:<select name="hora" id="hora">
  		    <?php 
  		    //mktime(hour,minute,second,month,day,year,is_dst)
