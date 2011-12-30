@@ -8,23 +8,11 @@
 		
 		
 	if(isset($formularioEvento)){
-		//$_SESSION["evento"]="";
-		//$_SESSION["errores"]="";
-		//$_SESSION["contenido"]="eventos.php";
-		$fecha1= explode("/",$formularioEvento["fecha"]);
-		$dia=$fecha1[0];
-		$mes=$fecha1[1];
-		$anyo=$fecha1[2];
-		$hora=$formularioEvento["hora"];
-		$sfecha=$anyo."-".$mes."-".$dia." ".$hora.":"."00";
-		//$fecha = new DateTime($sfecha);
-	    //$sfecha=$fecha->format('Y-m-d H:i:s');
-		
-		
-		//echo "---" . $usuarioID;
-		
+		$_SESSION["crea_evento"]="";
+		$_SESSION["errores"]="";
+		//$_SESSION["contenido"]="eventos.php";		
 		$conexion=conectaBASEDATOS();
-		insertarEvento($_SESSION["usuarioID"],$formularioEvento["centroID"],$formularioEvento["pistaID"],$sfecha,'1',$conexion);
+		insertarEvento($_SESSION["usuarioID"],$formularioEvento["centroID"],$formularioEvento["pistaID"],$formularioEvento["fecha"],'1',$conexion);
 		desconectaBASEDATOS($conexion);
 		//Volvemos al
 		header("Location: index.php");
@@ -32,5 +20,7 @@
 		header("Location: crear_evento.php");
 	}
 ?>
+
+ 
 
  
