@@ -11,10 +11,12 @@
   
   if(isset($_REQUEST["ciudad"]) && $_REQUEST["ciudad"]!=""){
      $_SESSION["ciudad"]=$_REQUEST["ciudad"];
+	 $_SESSION["pistaID"]=""; 
   }
   
   if(isset($_REQUEST["centro"]) && $_REQUEST["centro"]!=""){
      $_SESSION["centroID"]=$_REQUEST["centro"];
+	 $_SESSION["pistaID"]="";
   }
   
   if(isset($_REQUEST["pistas"]) && $_REQUEST["pistas"]!=""){
@@ -78,7 +80,7 @@ Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit
 	<option selected> </option>
 	<?php
 	   
-	   $pistas=pistasPorCentros($_REQUEST["centro"], $conexion);
+	   $pistas=pistasPorCentros($_SESSION["centroID"], $conexion);
 	
 	   foreach($pistas as $pista){
 	   	
@@ -105,7 +107,7 @@ Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit
  		  
  	   </select> -->
  	
- 	<p><input type="submit" value="Crear Evento">
+ 	<p><input type="submit" value="Crear Evento" >
  </form>
 
 
