@@ -1,10 +1,15 @@
 
 <?php
+ 
+ session_start();
+
+ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
+
   include_once("gestionBD.php");
   include_once("gestionEvento.php");
   
  // if(!session_start()){
-  	session_start();
+  	
  // }
   
   $_SESSION["contenido"]="crear_evento.php";
@@ -130,6 +135,8 @@ Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit
 
 <?php
 
+ //Creamos la variable de SESSION para el formulario con los valores por defecto
+
   $formularioEvento=$_SESSION["crea_evento"];
 
     $formularioEvento["centroID"]="";
@@ -139,6 +146,10 @@ Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit
 	
  $_SESSION["crea_evento"]=$formularioEvento;
 
+
+}else{
+	echo "Debe estar registrado para poder acceder a la gestión de eventos!";
+}//Fin si existe $SESSION["usuario"] y no es vacio
 ?>
 
  
