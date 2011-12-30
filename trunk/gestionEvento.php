@@ -60,5 +60,19 @@ function nombresDeCiudades($conexion)
 	}
 	return $stmt;
  }
+
+function consultaExisteEvento($centroID,$pistaID,$fecha,$conexion)
+{
+	try{
+		$stmt=$conexion->prepare('SELECT * FROM Eventos WHERE centroID=:centroID AND pistaID=:pistaID AND fecha=:fecha');
+		$stmt->bindParam(':centroID',$centroID);
+		$stmt->bindParam(':pistaID',$pistaID);
+		$stmt->bindParam(':fecha',$fecha);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }
 	
 ?>
