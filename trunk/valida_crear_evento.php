@@ -45,11 +45,26 @@
 	 	  $_SESSION["usuarioID"]=$id["usuarioID"];
 	 }
 	 
+	 
+	 
+	 
 	 //Recogemos los demas datos
  	$formularioEvento["centroID"]=$centroID;
  	$formularioEvento["pistaID"]=$pistaID;
  	$formularioEvento["fecha"]=$sfecha; 
 	$formularioEvento["evento"]=$evento->rowCount();
+		
+		
+	//Comprobamos que el centro ha sido seleccionado
+      if(  !(isset($formularioEvento["centroID"]) && $formularioEvento["centroID"]!='') ){
+  	     $errores[]='<font color="red">Debe seleccionar un <b>centro</b> </font><p>';
+       }
+ 
+     //Comprobamos que la pista ha sido seleccionada
+     if(  !(isset($formularioEvento["pistaID"]) && $formularioEvento["pistaID"]!='') ){
+  	     $errores[]='<font color="red">Debe seleccionar una <b>pista</b> </font><p>';
+      }	
+		
 		 
 	$_SESSION["crea_evento"]=$formularioEvento;
 	
