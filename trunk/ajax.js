@@ -58,11 +58,18 @@ function muestraContenido() {
   }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+//Funcion que muestra el menu con opciones con el javscripta activado
 function mostrarMenuConJavascript(){
+	
+	//Esto es para que muestre el divMenuConjavascript de la columna izquierda con javascript
 	var menu=document.getElementById("divmenuConJavascript");
 	menu.style.display='block';
+	
+	
+	//Esto es para el reloj que se actualiza cada segundo
+	
     momentoActual = new Date()
     hora = momentoActual.getHours()
     minuto = momentoActual.getMinutes()
@@ -82,7 +89,7 @@ function mostrarMenuConJavascript(){
 
     horaImprimible = hora + " : " + minuto + " : " + segundo
 
-    document.reloj.value = horaImprimible
+    document.form_reloj.reloj.value = horaImprimible
 
     setTimeout("mostrarMenuConJavascript()",1000)
 
