@@ -8,8 +8,13 @@
 		
 		
 	if(isset($formularioEvento)){
-		unset($_SESSION["crea_evento"]);
+		//Valores por defecto
+		$_SESSION["crea_evento"]="";
 		$_SESSION["errores"]="";
+		$_SESSION["centroID"]="";
+		$_SESSION["pistaID"]="";
+		$_SESSION["fecha"]="";
+		$_SESSION["ciudad"]="";
 		//$_SESSION["contenido"]="eventos.php";		
 		$conexion=conectaBASEDATOS();
 		insertarEvento($_SESSION["usuarioID"],$formularioEvento["centroID"],$formularioEvento["pistaID"],$formularioEvento["fecha"],'1',$conexion);
