@@ -69,4 +69,31 @@ function consultaExisteEvento($centroID,$pistaID,$fecha,$conexion)
 	return $stmt;
  }
 	
+
+ //Devuelve todos los eventos proximos de un usuario determinado a partir del momento actual, usando la funcion now() --> que devuelve la fecha y hora actual del sistema	
+function EventosDisponiblesPorUsuarioAPartirDeAhora($usuarioID, $conexion)
+{
+	try{
+		$stmt=$conexion->prepare('SELECT * FROM Eventos WHERE usuarioID=:usuarioID AND fecha>=now()');
+		$stmt->bindParam(':usuarioID',$usuarioID);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+	
 ?>
