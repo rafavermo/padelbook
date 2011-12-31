@@ -17,7 +17,7 @@
  
      //Comprobamos si existe o no el grupo a crear
      $conexion=conectaBASEDATOS();
-	   $existeGrupo=seleccionarExiteGrupo($formularioGrupo["nombre_grupo"],$conexion);
+	   $existeGrupo=seleccionarExisteGrupo($formularioGrupo["nombre_grupo"],$conexion);
   	 desconectaBASEDATOS($conexion);
   	 
 	   if($existeGrupo!=0){

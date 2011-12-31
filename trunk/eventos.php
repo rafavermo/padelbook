@@ -3,12 +3,44 @@ session_start();
 
   include_once("gestionBD.php");
   include_once("gestionEvento.php");
+  include_once("gestionUsuario.php");
 
   //$_SESSION["contenido"]="eventos.php";
 
 if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 
+  $usuario=$_SESSION["usuario"];
+
+//Obtenemos todos los eventos proximos del id del usuario logeado 
+ $conexion=conectaBASEDATOS();
+ 
+   $usuarioID=seleccionaUsuarioIDporNombre($usuario, $conexion);
+   
+   foreach ($usuarioID as $id){
+	 	  $_SESSION["usuarioID"]=$id["usuarioID"];
+	 }
+ 
+  // $eventos_proximos=EventosDisponiblesPorUsuarioAPartirDeAhora($_SESSION["usuarioID"], $conexion);
+   
+ desconectaBASEDATOS($conexion);
+ 
 ?>
+
+<table id="tabla__proximos_eventos" border="0">
+
+ <?php // foreach($eventos_proximos as $evento){  ?>
+    	
+	 <tr>   </tr>	
+		
+		
+		
+		
+  <?php  //} ?>	
+	
+	
+	
+</table>
+
 
   <p>&nbsp;&nbsp;<a href="index.php?contenido=crear_evento.php" onclick="submit">Crear evento</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   	

@@ -19,6 +19,10 @@
    	
    }
   
-  
+   if($_REQUEST["exito"]=="unirse_a_grupo"){
+   	 
+	   echo "Te has unido al grupo correctamente";
+   	
+   }
 	
 ?>  
