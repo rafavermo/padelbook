@@ -17,7 +17,7 @@
 		//Volvemos al la pagina principal
 		header("Location: index.php");
 	}else{
-		header("Location: crear_evento.php");
+		header("Location: index.php");
 	}
 ?>
 

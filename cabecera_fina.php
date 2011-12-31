@@ -3,7 +3,7 @@
 <?php
 if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 	$user = $_SESSION['usuario'];
-   echo "<form action='cerrar_sesion.php' method='post' style='float:right; display:inline'>Hola $user <input type='submit' name='cerrar_sesion' value='cerrar sesion'></form>";
+   echo "<form action='cerrar_sesion.php' method='post' style='float:right; display:inline'> $user    <a href='' onclick='perfil()'>Perfil&nbsp;</a>/ <a href='' onclick='grupos()'>Grupos</a> <input type='submit' name='cerrar_sesion' value='cerrar sesion'></form>";
   }else{
   	echo "<form action='menusinjavascript.php' method='post' style='float:right; display:inline'><input type='submit' name='login' value='login'></form>";
   }

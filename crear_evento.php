@@ -3,14 +3,9 @@
  
  session_start();
 
- if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
-
   include_once("gestionBD.php");
   include_once("gestionEvento.php");
   
- // if(!session_start()){
-  	
- // }
   
   $_SESSION["contenido"]="crear_evento.php";
   
@@ -29,6 +24,7 @@
   }
   
 ?>
+
 <!-- Para mostrar errores del javascript -->
 <div id="divTransparente">
   		 	
@@ -153,9 +149,7 @@ Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit
  $_SESSION["crea_evento"]=$formularioEvento;
 
 
-}else{
-	echo "Debe estar registrado para poder acceder a la gestión de eventos!";
-}//Fin si existe $SESSION["usuario"] y no es vacio
+
 ?>
 
  
