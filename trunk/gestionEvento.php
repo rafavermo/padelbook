@@ -5,12 +5,6 @@
  function insertarEvento($usuarioID,$centroID,$pistaID,$fecha,$propietario,$conexion)
  {
  try{
-		// $fecha1= explode("/",$fecha);
-		// $dia=$fecha1[0];
-		// $mes=$fecha1[1];
-		// $anyo=$fecha1[2];
-		// $fecha = new DateTime("$anyo-$mes-$dia");
-	    // $sfecha=$fecha->format('Y-m-d H:i:s');
 		$sql='INSERT INTO Eventos (usuarioID,centroID,pistaID,fecha,propietario) VALUES(:usuarioID,:centroID,:pistaID,:fecha,:propietario)';
 		$stmt=$conexion->prepare($sql);
 		$stmt->bindParam(':usuarioID',$usuarioID);
