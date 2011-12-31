@@ -34,7 +34,7 @@
         //Si encontramos errores del formulario
   		 if(count($errores) > 0){
    			 $_SESSION["errores"] = $errores;
-			 Header("Location: index.php");  
+			 Header("Location: index.php?contenido=crear_grupo.php");  
  		  }else{
     		 //Si no hay errores
    			 Header("Location: exitocreargrupo.php");
@@ -42,7 +42,7 @@
  
  
  }else{
- 	  Header("Location: index.php");
+ 	  Header("Location: index.php?contenido=crear_grupo.php");
    }
  
  /*

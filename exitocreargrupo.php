@@ -16,9 +16,9 @@
 		   insertarGrupo($formularioGrupo["nombre_grupo"],$formularioGrupo["descripcion_grupo"],$conexion);
 		desconectaBASEDATOS($conexion);
 		//Volvemos al la pagina principal
-		header("Location: index.php");
+		header("Location: index.php?exito=grupo");
 	}else{
-		header("Location: index.php");
+		header("Location: index.php?contenido=crear_grupo.php");
 	}
 ?>
 

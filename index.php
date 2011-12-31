@@ -2,11 +2,12 @@
  
  session_start();
 
-  $contenido="";
-
-  if(isset($_SESSION["contenido"])){
-    $contenido=$_SESSION["contenido"];
-  }
+ if(isset($_REQUEST["contenido"])){  
+  $contenido=$_REQUEST["contenido"];
+ }
+  //if(isset($_SESSION["contenido"])){
+   // $contenido=$_SESSION["contenido"];
+ // }
   
  
  if(isset($_SESSION["errores"])){
@@ -81,6 +82,11 @@
     }
 	//Destruimos la variable con los errores
 	unset($_SESSION["errores"]);
+	
+	//Mostramos el mensaje de exito si existe REQUEST[exito] con algun valor determinado
+	if(isset($_REQUEST["exito"]) && $_REQUEST["exito"]!=""){
+		include("exito.php");
+	}
 
    //incluye en el div contenido, el contenido de la pagina especificada por $contenido (variable de sesion)
    if($contenido!=""){

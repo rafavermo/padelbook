@@ -3,7 +3,7 @@
    
    session_start();
    
-   $_SESSION["contenido"]="registro.html";
+  // $_SESSION["contenido"]="registro.html";
    
 
     $formulario=$_SESSION["formulario"];
@@ -27,7 +27,7 @@
 	 
 
   
-   header("Location: index.php");
+   header("Location: index.php?contenido=registro.html");
     
 	
  

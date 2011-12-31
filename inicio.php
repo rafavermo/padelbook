@@ -3,7 +3,7 @@
    
    session_start();
    
-   $_SESSION["contenido"]="";
+   //$_SESSION["contenido"]="";
    
    header("Location: index.php");
     

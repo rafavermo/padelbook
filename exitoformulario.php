@@ -10,7 +10,7 @@
 		$conexion=conectaBASEDATOS();
 		insertarUsuario($formulario["nombre"],$formulario["apellidos"],$formulario["usuario"],$formulario["password"],$formulario["fecha_nacimiento"],$formulario["ciudad"],$formulario["correo"],$conexion);
 		desconectaBASEDATOS($conexion);
-		header("Location: index.php");
+		header("Location: index.php?exito=usuario");
 	}else
 		header("Location: formulario.php");
 ?>
