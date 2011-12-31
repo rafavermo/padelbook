@@ -4,13 +4,13 @@ session_start();
   include_once("gestionBD.php");
   include_once("gestionEvento.php");
 
-  $_SESSION["contenido"]="eventos.php";
+  //$_SESSION["contenido"]="eventos.php";
 
 if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 
 ?>
 
-  <p>&nbsp;&nbsp;<a href="" onclick="crear_evento()">Crear evento</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p>&nbsp;&nbsp;<a href="index.php?contenido=crear_evento.php" onclick="submit">Crear evento</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   	
   	 <a href="" onclick="modificar_evento()">Modificar evento</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   	 

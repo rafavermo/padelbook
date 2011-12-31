@@ -66,13 +66,13 @@
 	$_SESSION["crea_evento"]=$formularioEvento;
 	
    }else{
- 	  Header("Location: index.php");
+ 	  Header("Location: index.php?contenido=crear_evento.php");
    }
  
  //Si encontramos errores del formulario
  if(count($errores) > 0){
  	$_SESSION["errores"] = $errores;
-	Header("Location: index.php");  
+	Header("Location: index.php?contenido=crear_evento.php");  
  }else{
     //Si no hay errores
  	Header("Location: exitocrearevento.php");
