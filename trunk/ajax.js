@@ -39,6 +39,9 @@ function crear_grupo() {
   cargaContenido("crear_grupo.php", "GET", muestraContenido);
 }
 
+function unirse_a_grupo() {
+   cargaContenido("unirse_a_grupo.php", "GET", muestraContenido);
+}
 
 
 function cargaContenido(url, metodo, funcion) {
