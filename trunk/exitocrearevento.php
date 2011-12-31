@@ -8,7 +8,7 @@
 		
 		
 	if(isset($formularioEvento)){
-		$_SESSION["crea_evento"]="";
+		unset($_SESSION["crea_evento"]);
 		$_SESSION["errores"]="";
 		//$_SESSION["contenido"]="eventos.php";		
 		$conexion=conectaBASEDATOS();
