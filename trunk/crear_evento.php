@@ -23,7 +23,29 @@
      $_SESSION["pistaID"]=$_REQUEST["pistas"];
   }
   
+  
+  
+
+ //Creamos la variable de SESSION para el formulario con los valores por defecto
+
+if(!isset($_SESSION["crea_evento"]) || $_SESSION["crea_evento"]==""){
+  $formularioEvento=$_SESSION["crea_evento"];
+
+    $formularioEvento["centroID"]="";
+ 	$formularioEvento["pistaID"]="";
+ 	$formularioEvento["fecha"]=""; 
+	$formularioEvento["hora"]="";
+	
+ $_SESSION["crea_evento"]=$formularioEvento;
+
+}
+
 ?>
+  
+  
+  
+  
+
 
 <!-- Para mostrar errores del javascript -->
 <div id="divTransparente">
@@ -135,22 +157,7 @@ Seleccione la pista: <select name="pistas" id"pistas" onchange="this.form.submit
 
 </fieldset>
 
-<?php
 
- //Creamos la variable de SESSION para el formulario con los valores por defecto
-
-  $formularioEvento=$_SESSION["crea_evento"];
-
-    $formularioEvento["centroID"]="";
- 	$formularioEvento["pistaID"]="";
- 	$formularioEvento["fecha"]=""; 
-	$formularioEvento["hora"]="";
-	
- $_SESSION["crea_evento"]=$formularioEvento;
-
-
-
-?>
 
  
 
