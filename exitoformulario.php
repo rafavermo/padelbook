@@ -4,7 +4,7 @@
 	include_once("gestionUsuario.php");
     $formulario=$_SESSION["formulario"];
 	if(isset($formulario)){
-		unset($_SESSION["formulario"]);
+	  	unset($_SESSION["formulario"]);
 		$_SESSION["errores"]="";
 		$_SESSION["contenido"]="";
 		$conexion=conectaBASEDATOS();

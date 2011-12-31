@@ -2,7 +2,7 @@
  
  session_start();
 
-$contenido="";
+  $contenido="";
 
   if(isset($_SESSION["contenido"])){
     $contenido=$_SESSION["contenido"];
@@ -84,7 +84,7 @@ $contenido="";
 
    //incluye en el div contenido, el contenido de la pagina especificada por $contenido (variable de sesion)
    if($contenido!=""){
-     include_once($contenido);
+     include($contenido);
    }	   
 ?>
 	 
