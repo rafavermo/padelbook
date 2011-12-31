@@ -20,9 +20,26 @@ function videos(){
 }
 
 function eventos() {
-	//se le pasan 3 parámetros: la pagina que queremos descargar del servidor, el metodo y la funcion que muestra. en este caso lo muestra en el div de contenido
+	
+  cargaContenido("eventos.php", "GET", muestraContenido);
+}
+
+function crear_evento() {
+	
   cargaContenido("crear_evento.php", "GET", muestraContenido);
 }
+
+function grupos() {
+	
+  cargaContenido("grupos.php", "GET", muestraContenido);
+}
+
+function crear_grupo() {
+	
+  cargaContenido("crear_grupo.php", "GET", muestraContenido);
+}
+
+
 
 function cargaContenido(url, metodo, funcion) {
 
