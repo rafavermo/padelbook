@@ -73,6 +73,37 @@ function seleccionaGrupoIDporNombre($nombreGrupo, $conexion)
 	return $stmt;
  }
  
+ //Funcion  que devuelve todos los grupos de un usuario
+ function seleccionaGruposPorIDUsuario($IDusuario, $conexion)
+{
+	try{
+
+		$stmt=$conexion->prepare('SELECT * FROM grupos WHERE grupoID IN (SELECT grupoID FROM usuariogrupos WHERE usuarioID=:usuarioID)');
+		$stmt->bindParam(':usuarioID',$IDusuario);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }
+ 
+ //DELETE FROM usuariogrupos WHERE usuarioID=2 AND grupoID=2
+ 
+ //Funcion elimina usuario del grupo
+ function eliminaUsuarioDeGrupo($IDusuario,$IDgrupo, $conexion)
+{
+	try{
+
+		$stmt=$conexion->prepare('DELETE FROM usuariogrupos WHERE usuarioID=:usuarioID AND grupoID=:grupoID');
+		$stmt->bindParam(':usuarioID',$IDusuario);
+		$stmt->bindParam(':grupoID',$IDgrupo);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }
+ 
  
 
 

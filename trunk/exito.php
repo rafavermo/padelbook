@@ -24,5 +24,12 @@
 	   echo "Te has unido al grupo correctamente";
    	
    }
+   
+   
+   if($_REQUEST["exito"]=="elimina_usuario_grupo"){
+   	 
+	   echo "Te has desvinculado del grupo correctamente";
+   	
+   }
 	
 ?>  
