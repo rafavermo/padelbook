@@ -9,6 +9,8 @@ session_start();
  }	 
 	 
   $usuarioID=$_SESSION["usuarioID"];
+  
+  //el nombre del grupo no lo guardamos en una variable de sesion porque no nos hace falta para la consulta de eliminaUsuarioDeGrupo
   $nombre_grupo=$_REQUEST["nombre"];
   
  
