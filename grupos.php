@@ -38,9 +38,10 @@ session_start();
  <?php 
 ////Recorremos todos los grupo del usuario y lo mostramo en forma de tabla
      foreach ($GruposDelUsuario as $grupo ) {
-     	$_SESSION["grupoID"]=$grupo["grupoID"];
+     	//$_SESSION["grupoID"]=$grupo["grupoID"];
+		//$_SESSION["nombre"]=$grupo["nombre"]; 
    ?>  	
-        <tr>  <td> <b> <?=$grupo["nombre"];?> </b> </td> <td> <?=$grupo["descripcion"]; ?>  </td> <td> <a href="index.php?contenido=abandonar_grupo.php">Abandonar</a>  </td>  </tr>  
+        <tr>  <td> <b> <?=$grupo["nombre"];?> </b> </td> <td> <?=$grupo["descripcion"]; ?>  </td> <td> <a href="index.php?contenido=abandonar_grupo.php&grupoID=<?=$grupo["grupoID"]?>&nombre=<?=$grupo["nombre"]?> " >Abandonar</a>  </td>  </tr>  
 	   
 	    
 <?php }//Fin foreach ?>

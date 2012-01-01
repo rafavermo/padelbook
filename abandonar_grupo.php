@@ -4,9 +4,12 @@ session_start();
    include_once("gestionBD.php");
    include_once("gestionGrupo.php");
 
-  $grupoID=$_SESSION["grupoID"];
+ if(isset($_REQUEST["grupoID"]) && $_REQUEST["grupoID"]!="" ){
+  $_SESSION["grupoID"]=$_REQUEST["grupoID"];
+ }	 
+	 
   $usuarioID=$_SESSION["usuarioID"];
- 
+  $nombre_grupo=$_REQUEST["nombre"];
   
  
 
@@ -14,7 +17,7 @@ session_start();
 
 ?>
 
- Estas seguro de que quiere abandonar el grupo  ?
+ Estas seguro de que quiere abandonar el grupo <b><?=$nombre_grupo; ?></b>  ?
  <form name="formulario_abandona_grupo" id="formulario_abandona_grupo" action="abandonar_grupo.php" method="get">
  	<input name="abandonar" id="abandonar" type="submit" value="si" />
  	<input name="abandonar" id="abandonar" type="submit" value="no" />	
@@ -27,8 +30,9 @@ session_start();
  	if($_REQUEST["abandonar"]=="si"){
  		//eliminamos el usuario del grupo de la tabla usuariogrupos
 		 $conexion=conectaBASEDATOS();
-		    eliminaUsuarioDeGrupo($usuarioID,$grupoID, $conexion);
+		    eliminaUsuarioDeGrupo($usuarioID,$_SESSION["grupoID"], $conexion);
 		 desconectaBASEDATOS($conexion);
+		$_SESSION["grupoID"]="";
 		
  		Header("Location: index.php?contenido=grupos.php&exito=elimina_usuario_grupo");
 	} 
