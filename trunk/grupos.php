@@ -22,7 +22,7 @@ session_start();
  
 /////////////////////////////////////////////////////	
   
-//Obtenemos todos los nombres de grupos a los que pertenece el usuario////////
+//Obtenemos todos los datos de grupos a los que pertenece el usuario////////
 
     $GruposDelUsuario=seleccionaGruposPorIDUsuario($_SESSION["usuarioID"], $conexion);
 	
