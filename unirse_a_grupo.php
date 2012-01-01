@@ -61,7 +61,7 @@ $errores=$_SESSION["errores"];
 	      	 $conexion=conectaBASEDATOS();
 	    	   insertarUsuarioEnGrupo($grupo_id,$usuario_id,$conexion);
 	        	 desconectaBASEDATOS($conexion);
-		  Header("Location: index.php?exito=unirse_a_grupo");
+		  Header("Location: index.php?contenido=grupos.php&exito=unirse_a_grupo");
 	   }
 	 
 	
