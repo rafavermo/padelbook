@@ -20,7 +20,7 @@
 		insertarEvento($_SESSION["usuarioID"],$formularioEvento["centroID"],$formularioEvento["pistaID"],$formularioEvento["fecha"],'1',$conexion);
 		desconectaBASEDATOS($conexion);
 		//Volvemos al la pagina principal
-		header("Location: index.php?exito=evento");
+		header("Location: index.php?exito=evento&contenido=eventos.php");
 	}else{
 		header("Location: index.php?contenido=crear_evento.php");
 	}
