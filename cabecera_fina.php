@@ -1,6 +1,6 @@
 <div id="cabecera_fina">
 	<div id="form_reloj">
-		<form name="form_reloj" id="form_reloj" style="display:inline;">  <input type="text" name="reloj" id="reloj" size="35" onfocus="window.document.form_reloj.reloj.blur()"> <!-- La funcion blur() es para que no se ponga el foco del raton en el reloj ya que es un input tipo text --> </form>
+		<form name="form_reloj" id="form_reloj" style="display:inline;">  <input type="text" name="reloj" id="reloj" onfocus="window.document.form_reloj.reloj.blur()"> <!-- La funcion blur() es para que no se ponga el foco del raton en el reloj ya que es un input tipo text --> </form>
 	</div> 
 		<?php
 		if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
