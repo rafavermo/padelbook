@@ -127,8 +127,7 @@ function mostrarMenuConJavascript(){
 
 
    //imprimimos el formato de la fecha y la hora
-   "Fecha: " + textosemana[diasemana] + ", " + diames + " de " + textomes[mes] + " de " + ano + "<br>"
-   
+      
      horaFechaImprimible = hora + " : " + minuto + " : " + segundo + " - " + textosemana[diasemana] + ", " + diames + " de " + textomes[mes] + " de " + ano;
    
     document.form_reloj.reloj.value = horaFechaImprimible
