@@ -4,7 +4,7 @@ session_start();
  //include_once("gestionBD.php");
   
   
-  $_SESSION["contenido"]="crear_grupo.php";
+  //$_SESSION["contenido"]="crear_grupo.php";
 
 
  //Creamos la variable de SESSION si no existe para el formulario con los valores por defecto
