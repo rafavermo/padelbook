@@ -13,23 +13,33 @@ div{
 }
 
 #cabecera_fina{
-	background-color: RGB(238,232,170);
+	background-color: #ddf321;
+	/*border-width: 0px;*/
+	border-top-width: 0px; 
+	border-bottom-width: 0px;
+
 	height:4ex;
 }
 #header{
-	background-color: RGB(34,139,34);
+	background-image: url(../imagenes/fondo.png);
+
+	border-bottom-width: 0px;
 	height: 22ex;
 }
 #logotipo{
+	background-image: url(../imagenes/logotransparente.png);
+	width:110px;
+	height: 172px;
+	border-width: 0px;
 	background-clip: border-box;
-	background-color:#008000;
 	float: left;
 	clear:left;
 }
 #columna_izquierda{
 	background-color:RGB(46,139,87);
 	float: left;
-	height: 85ex;
+	min-height: 85ex;
+	height: auto;
 	width: 20%;
 }
 #contenido{
@@ -37,6 +47,7 @@ div{
 	overflow: hidden;
 	min-height: 85ex;
 	height: auto;
+	padding: 1.5ex;
 	
 }
 #columna_derecha{
@@ -49,6 +60,18 @@ div{
 	background-color:  RGB(255,255,153);
 	clear: both;
 	
+}
+
+#reloj{
+	background-color: #ddf321; 
+	color: Black; 
+	font-family: Verdana,Arial,Helvetica; 
+	font-size: 8pt; 
+	text-align: center; 
+	padding-top: 0px; 
+	padding-bottom: 0px;
+	margin-top: 7px;
+	float:left;
 }
 
 #divNombre{
@@ -98,4 +121,8 @@ div{
 	border:0;
 }
 
-
+.boton{
+	width: 100%; 
+	height:3em;
+	
+}
