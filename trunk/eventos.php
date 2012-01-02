@@ -44,9 +44,9 @@ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 
   <p>&nbsp;&nbsp;<a href="index.php?contenido=crear_evento.php" onclick="submit">Crear evento</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   	
-  	 <a href="" onclick="modificar_evento()">Modificar evento</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  	 <a href="" onclick="">Modificar evento</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   	 
-  	 <a href="" onclick="eliminar_evento()">Eliminar evento</a>
+  	 <a href="" onclick="">Eliminar evento</a>
 
 
 
