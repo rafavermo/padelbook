@@ -34,11 +34,11 @@
 	 
 		
 	<div id="logotipo">
-		logo
+	
 	</div>
 
 <div id="header">
-	<h1>Mi sitio web</h1>
+	<h1></h1>
 </div>
  
 <div id="cabecera_fina">
@@ -46,7 +46,7 @@
   <?php include_once("cabecera_fina.php"); ?>
 
 </div>
-
+<div id="cuerpo">
 <div id="columna_izquierda">
   
 <noscript><?php include("menuindexsinjavascript.html");?> </noscript>
@@ -96,7 +96,7 @@
 	 
          
 </div> <!-- div Contenido -->
-
+</div>
 <div id="pie">
 	Este es el pie 
 </div>
