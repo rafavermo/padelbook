@@ -167,8 +167,8 @@ padding : 0px;
 #menu_inicio a {
 	color: #23AFE2;
     float: right;
-    margin-left: 527px;
-    padding-right: 10px;
+/*    margin-left: 527px;*/
+    padding-right: 30px;
     padding-top: 2px;
     text-align: center;
     font-weight:bolder;
