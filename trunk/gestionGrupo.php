@@ -44,6 +44,7 @@ function seleccionarExisteUsuarioEnGrupo($usuarioID,$grupoID,$conexion)
 	return $stmt->rowCount();
  }
 
+//Devuelve el ID del grupo por el nombre
 function seleccionaGrupoIDporNombre($nombreGrupo, $conexion)
 {
 	try{

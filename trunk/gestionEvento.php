@@ -70,7 +70,7 @@ function consultaExisteEvento($centroID,$pistaID,$fecha,$conexion)
  }
 	
 
- //Devuelve todos los eventos proximos de un usuario determinado a partir del momento actual, usando la funcion now() --> que devuelve la fecha y hora actual del sistema	
+ //Devuelve todos los eventos proximos de un USUARIO determinado a partir del momento actual, usando la funcion now() --> que devuelve la fecha y hora actual del sistema	
 function EventosDisponiblesPorUsuarioAPartirDeAhora($usuarioID, $conexion)
 {
 	try{
@@ -83,13 +83,36 @@ function EventosDisponiblesPorUsuarioAPartirDeAhora($usuarioID, $conexion)
 	return $stmt;
  }	
 	
-	
-	
-	
-	
 
 
+//Devuelve TODOS LOS EVENTOS PROXIMOS DE UN GRUPO a partir del momento actual	
+function TodosLosEventosDeUnGrupoApartirDeAhora($grupoID, $conexion)
+{
+	try{
+		$stmt=$conexion->prepare('SELECT DISTINCT * FROM eventos WHERE fecha>=now() AND usuarioID IN (SELECT usuarioID FROM usuariogrupos WHERE grupoID=:grupoID) ORDER BY fecha ASC');
+		$stmt->bindParam(':grupoID',$grupoID);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }		
+	
 
+//SELECT DISTINCT * FROM eventos WHERE fecha>=now() AND propietario=1 AND usuarioID IN (SELECT usuarioID FROM usuariogrupos WHERE grupoID IN (SELECT grupoID FROM usuariogrupos WHERE usuarioID=:usuarioID) ) ORDER BY fecha ASC
+
+//DEVUELVE TODOS LOS EVENTOS PROXIMOS DE TODOS LOS GRUPOS AL QUE PERTENEZCA EL USUARIO
+function TodosLosEventosDeGRUPOSdelUsuarioApartirDeAhora($usuarioID, $conexion)
+{
+	try{
+		$stmt=$conexion->prepare('SELECT DISTINCT * FROM eventos WHERE fecha>=now() AND propietario=1 AND usuarioID IN (SELECT usuarioID FROM usuariogrupos WHERE grupoID IN (SELECT grupoID FROM usuariogrupos WHERE usuarioID=:usuarioID) ) ORDER BY fecha ASC');
+		$stmt->bindParam(':usuarioID',$usuarioID);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }	
 
 
 

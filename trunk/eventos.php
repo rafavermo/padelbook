@@ -11,7 +11,7 @@ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 
   $usuario=$_SESSION["usuario"];
 
-//Obtenemos todos los eventos proximos del id del usuario logeado 
+//Obtenemos todos los eventos proximos del GRUPO
  $conexion=conectaBASEDATOS();
  
    $usuarioID=seleccionaUsuarioIDporNombre($usuario, $conexion);
