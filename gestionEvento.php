@@ -99,13 +99,13 @@ function TodosLosEventosDeUnGrupoApartirDeAhora($grupoID, $conexion)
  }		
 	
 
-//SELECT DISTINCT * FROM eventos WHERE fecha>=now() AND propietario=1 AND usuarioID IN (SELECT usuarioID FROM usuariogrupos WHERE grupoID IN (SELECT grupoID FROM usuariogrupos WHERE usuarioID=:usuarioID) ) ORDER BY fecha ASC
+//SELECT * FROM eventos WHERE fecha>=now() AND propietario=1 AND usuarioID IN (SELECT usuarioID FROM usuariogrupos WHERE grupoID IN (SELECT grupoID FROM usuariogrupos WHERE usuarioID=:usuarioID) ) ORDER BY fecha ASC
 
 //DEVUELVE TODOS LOS EVENTOS PROXIMOS DE TODOS LOS GRUPOS AL QUE PERTENEZCA EL USUARIO
 function TodosLosEventosDeGRUPOSdelUsuarioApartirDeAhora($usuarioID, $conexion)
 {
 	try{
-		$stmt=$conexion->prepare('SELECT DISTINCT * FROM eventos WHERE fecha>=now() AND propietario=1 AND usuarioID IN (SELECT usuarioID FROM usuariogrupos WHERE grupoID IN (SELECT grupoID FROM usuariogrupos WHERE usuarioID=:usuarioID) ) ORDER BY fecha ASC');
+		$stmt=$conexion->prepare('SELECT * FROM eventos WHERE fecha>=now() AND propietario=1 AND usuarioID IN (SELECT usuarioID FROM usuariogrupos WHERE grupoID IN (SELECT grupoID FROM usuariogrupos WHERE usuarioID=:usuarioID) ) ORDER BY fecha ASC');
 		$stmt->bindParam(':usuarioID',$usuarioID);
 		$stmt->execute();
 	}catch(PDOException $e){
@@ -114,9 +114,43 @@ function TodosLosEventosDeGRUPOSdelUsuarioApartirDeAhora($usuarioID, $conexion)
 	return $stmt;
  }	
 
+//Devuelve el nombre del centro por el ID
+function nombreDelCentroPorID($centroID, $conexion)
+{
+	try{
+		$stmt=$conexion->prepare('SELECT nombre FROM centros WHERE centroID=:centroID');
+		$stmt->bindParam(':centroID',$centroID);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }
 
+ //Devuelve el nombre de la ciudad por el ID del centro
+function nombreDeCiudadPorCentroID($centroID, $conexion)
+{
+	try{
+		$stmt=$conexion->prepare('SELECT ciudad FROM centros WHERE centroID=:centroID');
+		$stmt->bindParam(':centroID',$centroID);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ } 
 
-
+function nombreDePistaPorPistaID($pistaID, $conexion)
+{
+	try{
+		$stmt=$conexion->prepare('SELECT descripcion FROM pistas WHERE pistaID=:pistaID');
+		$stmt->bindParam(':pistaID',$pistaID);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ } 
 
 	
 ?>

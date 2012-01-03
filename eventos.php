@@ -11,7 +11,7 @@ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 
   $usuario=$_SESSION["usuario"];
 
-//Obtenemos todos los eventos proximos del GRUPO
+//Obtenemos el id del usuario
  $conexion=conectaBASEDATOS();
  
    $usuarioID=seleccionaUsuarioIDporNombre($usuario, $conexion);
@@ -19,26 +19,58 @@ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
    foreach ($usuarioID as $id){
 	 	  $_SESSION["usuarioID"]=$id["usuarioID"];
 	 }
- 
-  // $eventos_proximos=EventosDisponiblesPorUsuarioAPartirDeAhora($_SESSION["usuarioID"], $conexion);
+  
+  //Obtenemos todos los eventos de todos los grupos al que pertenezca el usuario desde la fecha actual
+  $todos_los_eventos_proximos=TodosLosEventosDeGRUPOSdelUsuarioApartirDeAhora($_SESSION["usuarioID"], $conexion);
    
- desconectaBASEDATOS($conexion);
+ 
  
 ?>
+ <p>PROXIMOS EVENTOS:</p>
 
-<table id="tabla__proximos_eventos" border="0">
+<table id="tabla_proximos_eventos" border="1" bordercolor="gray">
+ 	<tr><td> <b>Fecha / Hora </b> </td> <td> <b>Ciudad </b></td> <td> <b>Centro </b></td> <td> <b>Pista </b></td><td> <b>Creado por </b></td>  </tr>
 
- <?php // foreach($eventos_proximos as $evento){  ?>
+
+ <?php  foreach($todos_los_eventos_proximos as $evento){  
+    	 
+		 //Sacamos el nombre del centro
+    	  $nombre_centro=nombreDelCentroPorID($evento["centroID"], $conexion);
+		   foreach ($nombre_centro as $nombre)
+	 	     $nombreCentro=$nombre["nombre"];
+	     
+		 //Sacamos el nombre del propietario del evento
+		   $nombreProp=seleccionaNombreUsuarioporIDUsuario($evento["usuarioID"], $conexion);
+		       foreach ($nombreProp as $nombre)
+	 	          $nombrePropietario=$nombre["nombre"];
+	 	          
+				  
+	     //Sacamos el nombre de la ciudad del centreo del evento
+	       $nombreCiudadE=nombreDeCiudadPorCentroID($evento["centroID"], $conexion);
+		   	  foreach ($nombreCiudadE as $nombre)
+	 	          $nombreCiudadCentro=$nombre["ciudad"];
+		 
+		 //Sacamos la pista por el ID	  
+	     $nombrePist=nombreDePistaPorPistaID($evento["pistaID"], $conexion);		  
+	 	      foreach ($nombrePist as $nombre)
+	 	          $nombrePista=$nombre["descripcion"];    		  
+	?>	  
     	
-	 <tr>   </tr>	
+	<tr>
+		<td> <?=$evento["fecha"]; ?> </td> <td> <?=$nombreCiudadCentro; ?> </td> <td> <?=$nombreCentro; ?> </td> <td> <?=$nombrePista ?></td><td> <?=$nombrePropietario ?></td>  
+		<td><a href="index.php?contenido=evento.php&ciudad=<?=$nombreCiudadCentro; ?>&centro=<?=$nombreCentro; ?>&propietario=<?=$nombrePropietario; ?>&fechaHora=<?=$evento['fecha']; ?>&pista=<?=$nombrePista ;?> " >Ver</a>  </td> 
+		
+   </tr>
 		
 		
 		
 		
-  <?php  //} ?>	
+  <?php  }//Fin foreach 
+ 
+     desconectaBASEDATOS($conexion);
+  ?>	
 	
-	
-	
+		
 </table>
 
 
