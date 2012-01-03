@@ -1,35 +1,57 @@
 body{
-	width: 80%;
-	
-margin-left : auto;
-margin-right : auto;
-padding : 0px;
-
+	background: url(../imagenes/fondo.gif) repeat scroll 0 100% transparent;
+	width: 80%;	
+/*	margin-left : auto;
+	margin-right : auto;
+	padding : 0px;*/
+	margin: 0 auto;
+    min-height: 100%;
+    text-align: left;
+/*    color: #2F2F2F;*/
+/*    width: 970px;*/
 	
 }
 
-/*div{
-	border: thin solid black;
-	 
-}*/
+.page {
+	background-color:#24afe1;
+    margin: 0 auto;
+    min-height: 100%;
+    text-align: left;
+    width: 898px; 
+}
+
+.wrapper {
+/*    background: url(../imagenes/fondo.gif) repeat-x scroll 0 100% transparent;*/
+    min-height: 100%;
+}
 
 
 #cabecera_fina{
 	background-image: url(../imagenes/fondo_menu.png);
-	background-color: #ddf321;
-	/*border-width: 0px;*/
 	border-top-width: 0px; 
 	border-bottom-width: 0px;
-
+	width: 898px;
 	height:4ex;
 }
+
+/*.form-search {
+    background: none repeat scroll 0 0 transparent;
+    height: 30px;
+    margin: 50px 0 0 16px;
+    left: 700px; 
+    top: 99px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 271px;
+}*/
 
 #header {
 	background-image: url(../imagenes/fondo.png);
 	border-bottom-width: 0px;
     height: 172px;
     padding: 0 0 0 15px;
-   /* width: 1200px;*/
+    width: 883px;
 }
 
 /*#header{
@@ -81,28 +103,41 @@ padding : 0px;
 #columna_izquierda{
 	background-color:#24afe1;
 	float: left;
-	min-height: 85ex;
+	min-height: 90ex;
 	height: auto;
 	width: 20%;
+	padding-top: 1.5ex;
+	padding-bottom: 1.5ex;
 }
 #contenido{
-	background-color:  RGB(248,248,255);
+	background-color: #FFFFFF;
 	overflow: hidden;
-	min-height: 85ex;
+	min-height: 90ex;
 	height: auto;
 	padding: 1.5ex;
+
 	
 }
 #columna_derecha{
 	background-color:  #24afe1;
 	float:right;
-	height: 85ex;
+	min-height: 90ex;
+	height: auto;
 	width: 20%;
+	padding-top: 1.5ex;
+	padding-bottom: 1.5ex;
 }
+
+#cuerpo{
+	min-height: 90ex;
+	height: auto;
+	width: 898px;
+}
+
 #pie{
 	background-color:  RGB(255,255,153);
 	clear: both;
-	
+	width: 898px; 
 }
 
 #reloj{
