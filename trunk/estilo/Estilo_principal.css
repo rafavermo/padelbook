@@ -13,7 +13,7 @@ body{
 }
 
 .page {
-	background-color:#24afe1;
+	background-color:#8cda67;
     margin: 0 auto;
     min-height: 100%;
     text-align: left;
@@ -101,12 +101,9 @@ body{
 }
 
 #columna_izquierda{
-	background-color:#24afe1;
+	background-color:#8cda67;
 	float: left;
-	min-height: 90ex;
-	height: auto;
 	width: 20%;
-	padding-top: 1.5ex;
 	padding-bottom: 1.5ex;
 }
 #contenido{
@@ -118,8 +115,51 @@ body{
 
 	
 }
+
+#menu{
+	margin:0; 
+	padding:0; 
+	width:180px; 
+	list-style:none;
+/*	background:rgb(255,255,255);*/
+}
+
+#menu li{
+	padding:0; 
+	margin:0 0 1px 0; 
+	height:40px; 
+	display:block; 
+}
+#menu ul{
+	width: 180px;
+	padding-left: 0px; 
+	margin-top: 0px; 
+}
+#menu li a{
+	text-align:left;
+	height:40px; 
+	padding:0px 25px;
+	padding-right: 50px;	 
+	font:17px Verdana, Arial, Helvetica, sans-serif;  
+	color:#000000;
+	display:block; 
+	background:url(../imagenes/verMenuImages.png) 0px -40px no-repeat; 
+	text-decoration:none; outline:none;}
+	
+#menu li a:hover{
+	background:url(../imagenes/verMenuImages.png) 0px 0px no-repeat; 
+	color:#000000;
+}
+/*#menu li a.active, .menu li a.active:hover{
+	background:url(../imagenes/verMenuImages.png) 0px -80px no-repeat;
+	color:#FFFFFF;
+}*/
+#menu li a span{
+	line-height:40px;
+}
+
 #columna_derecha{
-	background-color:  #24afe1;
+	background-color: #24afe1;
 	float:right;
 	min-height: 90ex;
 	height: auto;
@@ -151,7 +191,7 @@ body{
 /*	margin-top: 7px;*/
 	float:left;
 	border-width: 0px;
-	width: 30%;
+	width: 32%;
 }
 
 #divNombre{
