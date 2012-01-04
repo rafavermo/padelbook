@@ -43,6 +43,25 @@
 			<p><a href="">una nueva experiencia</a>
 			</p> 
 		</div>
+		<div id="iconos_redes_sociales">
+			<ul>
+				<li>
+					<a href="">
+						<img src="imagenes/twitter_icon.png" alt="twitter">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="imagenes/facebook_icon.png" alt="facebook">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="imagenes/youtube_icon.png" alt="youtube">
+					</a>
+				</li>
+			</ul>
+		</div>
 		<!-- <form id="search_mini_form" method="get" action="http://www.cooking-hacks.com/index.php/catalogsearch/result/">
 			<div class="form-search">
 				<label for="search">Search:</label>
