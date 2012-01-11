@@ -24,7 +24,7 @@ session_start();
   
 //Obtenemos todos los datos de grupos a los que pertenece el usuario////////
 
-    $GruposDelUsuario=seleccionaGruposPorIDUsuario($_SESSION["usuarioID"], $conexion);
+    $GruposNotUsuario=seleccionaGruposNotUsuarioID($_SESSION["usuarioID"], $conexion);
 	
    desconectaBASEDATOS($conexion);
 /////////////////////////////////////////////////////////  
@@ -54,8 +54,8 @@ session_start();
 			?>
 			<div id="contenido">
 				<div id="stylized">
-				<h1>Listado de mis grupos</h1>
-				<p>Aparecen todos los grupos a los que te has inscrito.</p>
+				<h1>Listado de grupos</h1>
+				<p>Aparecen todos los grupos a los que no te has inscrito.</p>
 				<div id="errores">
 			 		<?
 			 		// $errores=$_SESSION["errores"];
@@ -78,7 +78,7 @@ session_start();
   
  			<?php 
 ////Recorremos todos los grupo del usuario y lo mostramo en forma de tabla
-     foreach ($GruposDelUsuario as $grupo ) {
+     foreach ($GruposNotUsuario as $grupo ) {
      	//$_SESSION["grupoID"]=$grupo["grupoID"];
 		//$_SESSION["nombre"]=$grupo["nombre"]; 
    ?>  	
