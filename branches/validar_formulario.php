@@ -23,7 +23,7 @@
 	  	
    }else{
    	//Si no existe ningun formulario
-  	 Header("Location: index.php"); 	  
+  	 Header("Location: registro.php"); 	  
   }
    
   //Si encontramos errores del formulario
