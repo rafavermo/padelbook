@@ -87,6 +87,20 @@ function seleccionaGrupoIDporNombre($nombreGrupo, $conexion)
 	}
 	return $stmt;
  }
+
+ //Funcion  que devuelve todos los grupos a los que no pertenece el usuario
+ function seleccionaGruposNotUsuarioID($usuarioID, $conexion)
+{
+	try{
+
+		$stmt=$conexion->prepare('SELECT * FROM grupos WHERE grupoID NOT IN (SELECT grupoID FROM usuariogrupos WHERE usuarioID=:usuarioID)');
+		$stmt->bindParam(':usuarioID',$usuarioID);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }
  
  //DELETE FROM usuariogrupos WHERE usuarioID=2 AND grupoID=2
  
