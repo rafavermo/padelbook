@@ -108,7 +108,7 @@ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 		
 			</table>
 
- 			<a href="crear_evento.php" onclick="submit()">Crear Evento</a> 
+ 			<a href="crear_evento.php" onclick="submit">Crear Evento</a> 
   	 		<!-- <a href="" onclick="">Modificar evento</a>
 			<a href="" onclick="">Eliminar evento</a> -->
 
