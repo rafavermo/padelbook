@@ -81,7 +81,7 @@ tr, td{
 }
 
 #stylized a {
-    background: url("img/button.png") no-repeat scroll 0 0 #666666;
+    background: no-repeat scroll 0 0 #666666;
     border: 0 none;
     clear: both;
     color: #FFFFFF;
