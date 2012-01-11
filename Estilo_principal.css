@@ -12,6 +12,125 @@ body{
 	
 }
 
+/*Estilo de formulario*/
+p, h1, form, button{
+	border:0; 
+	margin:0; 
+	padding:0;
+}
+.spacer{
+	clear:both; 
+	height:1px;
+}
+
+
+#stylized{
+	border:solid 2px #b7ddf2;
+	background:#ebf4fb;
+	margin:0 auto;
+	width:100%;
+	min-height: 90ex;
+	height: 100%;
+}
+#stylized h1 {
+	font-size:20px;
+	font-weight:bold;
+	margin-bottom:8px;
+	padding-top:10px;
+	padding-left: 25px; 
+}
+
+#stylized p{
+	font-size:17px;
+	color:#666666;
+	margin-bottom:20px;
+	border-bottom:solid 1px #b7ddf2;
+	padding-bottom:10px;
+	padding-left: 25px;
+}
+#stylized label{
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:162px;
+	float:left;
+	padding-left: 25px;
+}
+#stylized .small{
+	color:#666666;
+	display:block;
+	font-size:11px;
+	font-weight:normal;
+	text-align:right;
+	width:162px;
+}
+#stylized input{
+	float:left;
+	font-size:12px;
+	padding:4px 2px;
+	border:solid 1px #aacfe4;
+	width:250px;
+	margin:2px 0 20px 10px;
+}
+
+#stylized a {
+    background: url("img/button.png") no-repeat scroll 0 0 #666666;
+    border: 0 none;
+    clear: both;
+    color: #FFFFFF;
+    display: block;
+    font-size: 12px;
+    font-weight: bolder;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 205px;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    width: 125px;
+}
+
+#stylized textarea {
+    border: 1px solid #AACFE4;
+    float: left;
+    font-size: 12px;
+    margin: 2px 0 20px 10px;
+    padding: 4px 2px;
+    width: 250px;
+}
+
+#stylized table {
+    border: 1px solid #AACFE4;
+    float: left;
+    font-size: 12px;
+    margin: 2px 0 20px 100px;
+    padding: 4px 2px;
+    width: 380px;
+}
+
+#stylized select {
+	float:left;
+	font-size:12px;
+	padding:4px 2px;
+	border:solid 1px #aacfe4;
+	width:206px;
+	margin:2px 0 20px 10px;
+}
+
+#stylized button{
+	clear:both;
+	margin-left:205px;
+	width:125px;
+	height:31px;
+	background:#666666 url(img/button.png) no-repeat;
+	text-align:center;
+	line-height:31px;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+}
+/*Fin estilo formulario*/
+
 .page {
 	background-color:#8cda67;
     margin: 0 auto;
@@ -125,7 +244,7 @@ body{
 	overflow: hidden;
 	min-height: 90ex;
 	height: auto;
-	padding: 1.5ex;
+/*	padding: 1.5ex;*/
 
 	
 }
@@ -178,8 +297,8 @@ body{
 	min-height: 90ex;
 	height: auto;
 	width: 20%;
-	padding-top: 1.5ex;
-	padding-bottom: 1.5ex;
+/*	padding-top: 1.5ex;
+	padding-bottom: 1.5ex;*/
 }
 
 #cuerpo{
@@ -208,41 +327,18 @@ body{
 	width: 32%;
 }
 
-#divNombre{
-
- border:0;
-
-	
-}
-#divUsuario{
- border:0;
-}
-
-#divApellidos{
-	border:0;
-}
-
-#divPassword{
-	border:0;
-}
-
-#divFecha{
-	border:0;
-}
-
-#divCiudad{
-	border:0;
-}
-
-#divCorreo{
-	border:0;
-}
-
-#divTransparente{
-	border: 3px solid;
+#errores{
+	font-size:17px;
 	color:red;
-	display: none;
-	color=red;
+	display: block;
+	padding-left: 25px;
+}
+
+.seguridad{
+	width: 35px;
+	border: none;
+	background-color:#ebf4fb; 
+
 }
 
 #divmenuConJavascript{
@@ -287,4 +383,77 @@ body{
 .video{
 	width:100%; 
 	height:360px;
+}
+
+/*Pie de página*/
+
+footer {
+    background: none repeat scroll 0 0 #191814;
+    border-top: 1px solid #363631;
+}
+
+footer h5 {
+    color: #FFFFFF;
+    margin-bottom: 8px;
+}
+
+h5 {
+    margin-top: 0;
+}
+.content {
+    margin: 0 auto;
+    padding: 15px;
+    position: relative;
+    width: 960px;
+    z-index: 10;
+}
+
+.block .in {
+    padding-left: 6.25%;
+    padding-right: 6.25%;
+}
+
+footer li a {
+    color: #888987;
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #888987; 
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    vertical-align: baseline;
+}
+ul {
+    list-style: none outside none;
+}
+
+.line:after {
+    clear: both;
+    content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+    display: block;
+    font-size: xx-large;
+    height: 0 !important;
+    line-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.block:after {
+    content: " ";
+    display: block;
+    position: absolute;
+}
+
+.block {
+    float: left;
+    width: 22%;
+}
+
+footer .colophon {
+    font-size: 12px;
+    padding: 80px 0 0;
+    text-align: center;
+}
+footer p {
+    color: #888987;
 }
