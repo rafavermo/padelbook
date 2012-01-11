@@ -89,8 +89,8 @@ session_start();
    
  		</table>
 
-			<a href="crear_grupo.php" onclick="submit()">Crear grupo</a> 
-			<a href="unirse_a_grupo.php" onclick="submit()">Unirse a un grupo</a>
+			<a href="crear_grupo.php">Crear grupo</a> 
+			<a href="unirse_a_grupo.php">Unirse a un grupo</a>
   	
   	</div>
 	</div>
