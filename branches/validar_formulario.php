@@ -29,7 +29,7 @@
   //Si encontramos errores del formulario
    if(count($errores) > 0){
    	 $_SESSION["errores"] = $errores;
-	 Header("Location: index.php?contenido=registro.php");  
+	 Header("Location: registro.php");  
     }else{
       //Si no hay errores
    	 Header("Location: exitoformulario.php"); 
