@@ -65,7 +65,7 @@ if(!isset($login)){
          			<button type="submit">Login</button>
    			</form>
     	
-    	 <p>A&uacute;n no est&aacute;s registrado</p><a href="registro.php" onclick="submit"> Registrarse!</a>
+    	 <p>A&uacute;n no est&aacute;s registrado</p><a href="registro.php"> Registrarse!</a>
     
        	</div>
 </div>
