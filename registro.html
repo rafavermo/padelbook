@@ -1,0 +1,78 @@
+<div id="stylized">
+	<form id="form" action="validar_formulario.php" method="post" name="datos" onSubmit="return valida_formulario(this);">
+		<h1>Registro de Usuario</h1>
+		<p>Debe introducir sus datos para poder registrarse. Campos obligatorios *</p>
+			<label>Nombre 
+				<span class="small"> </span>
+			</label>
+			<input class="text" type="text" name="nombre" id="nombre"  value='<?=$_SESSION["formulario"]["nombre"]?>' />
+			<label>Apellidos 
+				<span class="small"> </span>
+			</label>
+			<input class="text" type="text" name="apellidos" id="apellidos" value='<?=$_SESSION["formulario"]["apellidos"]?>' />
+			<label>Usuario
+				<span class="small"> </span>
+			</label>
+			<input class="text" type="text" name="usuario" id="usuario" value='<?=$_SESSION["formulario"]["usuario"]?>' />
+			<label>Password
+				<span class="small">Minimo 6 car&aacute;cteres</span>
+			</label>
+			<input class="text" type="password" name="password" id="password" value='<?=$_SESSION["formulario"]["password"]?>' onkeyup="muestra_seguridad_clave(this.value, this.form)"/>
+			<label>Confirmar Password
+				<span class="small">Introduzca tus apellidos</span>
+			</label>
+			<input class="text" type="password" name="cpassword" id="cpassword" value='<?=$_SESSION["formulario"]["cpassword"]?>' />
+			<label>Fecha Nacimiento
+				<span class="small">Fecha (ej. 19/01/2012)</span>
+			</label>
+			<input class="text" type="text" name="fecha_nacimiento" id="fecha_nacimiento" maxlength="10" value='<?=$_SESSION["formulario"]["fecha_nacimiento"]?>'/>
+			<label>Ciudad
+				<span class="small">Hola como estas</span>
+			</label>
+			<input class="text" type="text" name="ciudad" id="ciudad" value='<?=$_SESSION["formulario"]["ciudad"]?>' />
+			<label>Email
+				<span class="small"> </span>
+			</label>
+			<input class="text" type="text" name="correo" id="correo" value='<?=$_SESSION["formulario"]["correo"]?>'/>
+				<button type="submit">Enviar</button>
+			<div class="spacer"> </div>
+	</form>
+</div>
+
+<!--          	<i>seguridad:</i> -->
+<!-- <input type="text" onfocus="blur()" style="border: 0px; background-color:ffffff; text-decoration:italic;" name="seguridad">	
+         </div> --> <!--divPassword -->
+	
+
+
+<!-- <form action="validar_formulario.php" method="get" name="datos" onSubmit="return valida_formulario(this);">	
+
+    
+          <fieldset>
+            <legend>Datos de registro </legend>
+  		 <div id="divTransparente">
+  		 	
+  		 </div>
+  
+			
+         <div id="divNombre"><label for="nombre" title="Introduzca su nombre">Nombre:</label><input class="text" type="text" name="nombre" id="nombre" size="20" value='<?=$_SESSION["formulario"]["nombre"]?>' /></div>
+         <div id="divApellidos"><label for="apellidos" title="Introduzca su apellido">Apellidos:<input class="text" type="text" name="apellidos" id="apellidos" size="20" value='<?=$_SESSION["formulario"]["apellidos"]?>' /></div>
+         <div id="divUsuario"><label for="usuario" title="Introduzca su usuario">Usuario:</label><input class="text" type="text" name="usuario" id="usuario" size="20" value='<?=$_SESSION["formulario"]["usuario"]?>' /></div>
+         <div id="divPassword"><label for="password" title="Introduzca su password">Password:<input class="text" type="password" name="password" id="password" size="20" value='<?=$_SESSION["formulario"]["password"]?>' onkeyup="muestra_seguridad_clave(this.value, this.form)"/>
+         	<i>seguridad:</i>
+         	<input type="text" onfocus="blur()" style="border: 0px; background-color:ffffff; text-decoration:italic;" name="seguridad">	
+         </div> <!--divPassword -->
+<!--          <div id="divPassword"><label for="cpassword">Confirmar Password:<input class="text" type="password" name="cpassword" id="cpassword" size="20" value='<?=$_SESSION["formulario"]["cpassword"]?>' /></div>
+         <div id="divFecha"><label for="fecha_nacimiento">Fecha de nacimiento:</label><input class="text" type="text" name="fecha_nacimiento" id="fecha_nacimiento" size="10"maxlength="10" value='<?=$_SESSION["formulario"]["fecha_nacimiento"]?>'/></div>
+         <div id="divCiudad"><label for="ciudad">Ciudad:<input class="text" type="text" name="ciudad" id="ciudad" size="20" value='<?=$_SESSION["formulario"]["ciudad"]?>' /></div>
+         <div id="divCorreo"><label for="correo">Correo electr&oacute;nico:<input class="text" type="text" name="correo" id="correo" size="20" value='<?=$_SESSION["formulario"]["correo"]?>'/></div>	 -->         
+         	<!--<input type=hidden name=registro value=si />  -->
+   
+    	
+			<!-- <p><input id="botonEnviar" type="submit" name="Enviar" value="Enviar">
+			<button type="reset">Borrar</button>      
+	  
+	  </fieldset>
+        
+    </form> -->
+ 

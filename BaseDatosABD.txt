@@ -1,0 +1,103 @@
+DROP TABLE if exists Eventos;
+DROP TABLE if exists UsuarioGrupos;
+DROP TABLE if exists CentroPistas;
+DROP TABLE if exists Usuarios;
+DROP TABLE if exists Grupos;
+DROP TABLE if exists Centros;
+DROP TABLE if exists Pistas;
+
+
+
+
+CREATE TABLE Usuarios (
+        usuarioID int NOT NULL AUTO_INCREMENT,
+        nombre varchar(50) NOT NULL, 
+        apellidos varchar(50) NOT NULL,           
+    	usuario varchar(50) NOT NULL,
+		password varchar(50) NOT NULL,
+        fechaNacimiento datetime, 
+		ciudad varchar(50),
+		email varchar(50) NOT NULL,
+PRIMARY KEY (usuarioID));
+
+CREATE TABLE Centros (
+        centroID int NOT NULL AUTO_INCREMENT,
+        nombre varchar(50) NOT NULL, 
+        numeroPistas int NOT NULL,           
+        direccion varchar(100) NOT NULL,
+	    ciudad varchar(50) NOT NULL,
+PRIMARY KEY (centroID));
+INSERT INTO Centros(nombre, numeroPistas, direccion, ciudad)  VALUES ('Centro Deportivo Bami', '2', 'Castillo de Cortegana, s/n','Sevilla');
+INSERT INTO Centros(nombre, numeroPistas, direccion, ciudad)  VALUES ('Centro Deportivo Bermejales II', '4', 'Bolonia, s/n','Sevilla');
+INSERT INTO Centros(nombre, numeroPistas, direccion, ciudad)  VALUES ('Centro Deportivo Wellsport', '3', 'Avda Doctor Federico Rubio y Gali, 59','Madrid');
+
+
+CREATE TABLE Pistas (
+        pistaID int NOT NULL AUTO_INCREMENT,
+        descripcion varchar(100),
+PRIMARY KEY (pistaID));
+INSERT INTO Pistas(descripcion) VALUES ('Pista 1');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 2');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 3');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 4');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 5');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 6');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 7');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 8');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 9');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 10');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 11');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 12');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 13');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 14');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 15');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 16');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 17');
+INSERT INTO Pistas(descripcion) VALUES ('Pista 18');
+
+
+CREATE TABLE Grupos (
+        grupoID int NOT NULL AUTO_INCREMENT,       
+        nombre varchar(50) NOT NULL,
+        descripcion varchar(200),
+PRIMARY KEY (grupoID));
+
+
+
+CREATE TABLE UsuarioGrupos (
+        usuarioID int NOT NULL,
+        grupoID int NOT NULL,        
+PRIMARY KEY (usuarioID, grupoID),
+FOREIGN KEY (usuarioID) REFERENCES Usuarios (usuarioID),
+FOREIGN KEY (grupoID) REFERENCES Grupos (grupoID));
+
+
+CREATE TABLE CentroPistas (
+        centroID int NOT NULL,
+        pistaID int NOT NULL,        
+PRIMARY KEY (centroID, pistaID),
+FOREIGN KEY (centroID) REFERENCES Centros (centroID),
+FOREIGN KEY (pistaID) REFERENCES Pistas (pistaID));
+INSERT INTO CentroPistas VALUES ('1','1');
+INSERT INTO CentroPistas VALUES ('1','2');
+INSERT INTO CentroPistas VALUES ('2','1');
+INSERT INTO CentroPistas VALUES ('2','2');
+INSERT INTO CentroPistas VALUES ('2','3');
+INSERT INTO CentroPistas VALUES ('2','4');
+INSERT INTO CentroPistas VALUES ('3','1');
+INSERT INTO CentroPistas VALUES ('3','2');
+INSERT INTO CentroPistas VALUES ('3','3');
+
+
+CREATE TABLE Eventos (
+	usuarioID int NOT NULL,
+        centroID int NOT NULL,
+        pistaID int NOT NULL,
+        fecha datetime NOT NULL, 
+	propietario boolean DEFAULT '0',              
+
+PRIMARY KEY (usuarioID, fecha),
+FOREIGN KEY (usuarioID) REFERENCES Usuarios (usuarioID),
+FOREIGN KEY (centroID) REFERENCES CentroPistas (centroID),
+FOREIGN KEY (pistaID) REFERENCES CentroPistas (pistaID)); 
+
