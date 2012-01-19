@@ -16,7 +16,7 @@
     </title>
     <link rel="stylesheet" type="text/css" title="Original" href="estilo/Estilo_principal.css" />
     <script type="text/javascript" src="ajax.js" ></script>
-    <script type="text/javascript" src="valida_formulario.js" ></script>
+    <script type="text/javascript" src="valida_modifica_perfil.js" ></script>
 
 </head>
 <title>
@@ -52,20 +52,47 @@ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 	<?php
 	  //Obtenemos todos los datos del usuario
 	   $conexion=conectaBASEDATOS();
-	   $datos_Usuario=DatosUsuario($usuario, $conexion);
+	     $datos_Usuario=DatosUsuario($usuario, $conexion);
+	   desconectaBASEDATOS($conexion); 
 		 
 	   foreach ($datos_Usuario as $datos){
-	       $datos_Usuario=$datos;  
+	       $datos_Usuario=$datos; 
+		    
 	   }
 	   
-	     
+	   $_SESSION["datos_perfil"]["usuarioID"]=$datos["usuarioID"];
+	   $_SESSION["datos_perfil"]["nombre"]=$datos["nombre"];
+	   $_SESSION["datos_perfil"]["apellidos"]=$datos["apellidos"];
+	   $_SESSION["datos_perfil"]["usuario"]=$datos["usuario"];
+	   $_SESSION["datos_perfil"]["password"]=$datos["password"];
+	   $_SESSION["datos_perfil"]["fechaNacimiento"]=$datos["fechaNacimiento"];
+	   $_SESSION["datos_perfil"]["ciudad"]=$datos["ciudad"];
+	   $_SESSION["datos_perfil"]["email"]=$datos["email"];
+	   
+	   
+	  // echo "----->>>>" . $_SESSION["datos_perfil"]["nombre"] . "---" . $_SESSION["datos_perfil"]["password"];
+	   
+	   //$_SESSION["datos_perfil"]=$datos_Usuario; 
+	   
+	   //tratamiento de la fecha
+	   list($fecha,$hora)=explode(" ",$datos_Usuario["fechaNacimiento"]);
+	   list($anio,$mes,$dia)=explode("-",$fecha);
+	   
+	   $fecha_formateada= $dia."/".$mes."/".$anio;
+	   
+	    if($fecha_formateada=="00/00/0000"){
+	    	$fecha_formateada="";
+	    }
+	   
 	?>
 	
 	
 	
 	<!-- Formualrio para actulizar datos del usuario -->
-	<form id="form" action="valida_modifica_perfil.php" method="post" name="datos" onSubmit="return valida_formulario(this);">
+	<form id="form" action="valida_modifica_perfil.php" method="get" name="datos">
 		
+		<!-- div para mostrar errores o cualquier otro mensaje -->
+			<?php include_once("exito.php"); ?>
 		<div id="errores">
 			 <?php include("errores_php.php"); ?>
   		</div>
@@ -81,7 +108,7 @@ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 			
 		<input class="text" type="hidden" name="usuario" id="usuario" value='<?=$usuario?>' />
 			
-			<label>Modificar Password 
+			<label>Nuevo Password 
 				<span class="small">Minimo 6 car&aacute;cteres</span>
 			</label>
 			<input class="text" type="password" name="password" id="password"  onkeyup="muestra_seguridad_clave(this.value, this.form)"/>
@@ -92,7 +119,7 @@ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 			<label>Fecha Nacimiento
 				<span class="small">Fecha (ej. 19/01/2012)</span>
 			</label>
-			<input class="text" type="text" name="fecha_nacimiento" id="fecha_nacimiento" maxlength="10" value='<?=$datos_Usuario["fecha_nacimiento"]?>'/>
+			<input class="text" type="text" name="fecha_nacimiento" id="fecha_nacimiento" maxlength="10" value='<?=$fecha_formateada?>'/>
 			<label>Ciudad
 				<span class="small"> </span>
 			</label>

@@ -47,8 +47,19 @@
    
       if($_REQUEST["exito"]=="eliminarevento"){
     
-	   echo "Has eliminado el evento correctamente";
+	    echo "Has eliminado el evento correctamente";
    	
-   }
+       }
+	  
+	 
+	  
+	  if($_REQUEST["exito"]=="modifica_perfil"){
+    
+	    echo "Has modificado tu perfil correctamente";
+   	
+       }
+	  
+	  
+	  
 ?>  
 </div>
