@@ -11,7 +11,7 @@
 		<div id="iconos_redes_sociales">
 			<ul>
 				<li>
-					<a href="">
+					<a href="http://twitter.com/padel_book">
 						<img src="imagenes/twitter_icon.png" alt="twitter">
 					</a>
 				</li>
