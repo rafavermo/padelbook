@@ -42,17 +42,30 @@ session_start();
 		   include_once("columna_izquierda.php");
 			?>
 			<div id="contenido">
-				
+				<div id="stylized">
+				<h1>Abandonar Evento</h1>
+				<p>Confirmaci&oacute;n para dejar el grupo.</p>
 				<div id="errores">
-					
-			 		<?php include_once("errores_php.php"); ?>
+			 		<?
+			 		// $errores=$_SESSION["errores"];
+					// //si existen errores por la validacion PHP por parte del servidor en el registro los imprimimos
+					// if(isset($errores) && count($errores)>0 && $errores!=""){
+	  					// foreach($errores as $elemento){
+	  	   					// printf("$elemento");
+	   					// }
+    				// }
+					// //Destruimos la variable con los errores
+					// // unset($_SESSION["errores"]);?>
   				</div>
+  				<p></p>
   				
   				<!-- Aqui empieza el nuevo contenido de abandonar_grupo -->
 
 
 
- Estas seguro de que quiere abandonar el grupo <b><?=$nombre_grupo; ?></b>  ?
+ <h2>Estas seguro que quieres abandonar el grupo<b><?=$nombre_grupo; ?></b>?
+ 	<span class="small"> </span>
+</h2>   
  <form name="formulario_abandona_grupo" id="formulario_abandona_grupo" action="abandonar_grupo.php" method="get">
  	<input name="abandonar" id="abandonar" type="submit" value="si" />
  	<input name="abandonar" id="abandonar" type="submit" value="no" />	
@@ -85,9 +98,10 @@ session_start();
 
 <!-- aqui incluimos el pie igual para todas las paginas -->
 
-
+</div>
 	</div>
 	<? include_once("pie.php");?>
+	</div>
 	</div>
 </div>
 </body>
