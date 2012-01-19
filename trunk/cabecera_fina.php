@@ -8,7 +8,7 @@
    			<div id="menu_inicio" class="opcionactiva0">
    					<a href="cerrar_sesion.php">Cerrar Sesion</a></div>
    					<div id="menu_inicio" class="opcionactiva0"> 
-   					<a href="" onclick="perfil()">Perfil</a></div> 
+   					<a href="perfil.php" onclick="submit()">Perfil</a></div> 
    					<div id="menu_inicio" class="opcionactiva0">
    					<a href="grupos.php" onclick="submit()">Grupos</a> </div>
   		<?}else{?>

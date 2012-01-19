@@ -83,6 +83,23 @@ function seleccionaNombreUsuarioporIDUsuario($UsuarioID, $conexion)
  }	
 	
 	
+function DatosUsuario($usuario, $conexion)
+{
+	try{
+
+		$stmt=$conexion->prepare('SELECT * FROM Usuarios WHERE usuario=:usuario');
+		$stmt->bindParam(':usuario',$usuario);
+		$stmt->execute();
+	}catch(PDOException $e){
+		return false;
+	}
+	return $stmt;
+ }		
+	
+ 	
+	
+	
+	
 	
 	
 ?>
