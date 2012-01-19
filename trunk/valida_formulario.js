@@ -79,6 +79,41 @@ function valida_formulario(F) {
                   
 }  
 
+function validalogin(F) {  
+        
+    var res=true;         
+          
+    var mensaje_error = " "; 
+    
+    //Eliminamos todos los espacios en blanco delante y detras 
+    F.usuario.value = eliminaEspacios(F.usuario.value);
+    F.password.value = eliminaEspacios(F.password.value);
+       
+	
+	//Color azul para todos los campos
+	document.getElementById('usuario').style.borderColor='#aacfe4';
+	document.getElementById('password').style.borderColor='#aacfe4';
+	
+              
+        if(F.usuario.value=="") {      	 	  
+          	document.getElementById('usuario').style.borderColor='red';
+        	mensaje_error = mensaje_error + 'El usuario no debe ser vacio!<br>';
+            res = false;
+        }
+        
+        if(F.password.value=="") {  
+        		document.getElementById('password').style.borderColor='red';
+        	    mensaje_error = mensaje_error + 'El password no debe ser vacio!<br>';
+                res = false;
+        }
+        
+         
+        //mostramos la varible mensaje_error en formato HTML en el div errores
+        muestraMensajeError(mensaje_error);
+        
+        return res;
+                  
+}  
 
 
 //--------------Funciones----------------------------------//
