@@ -15,7 +15,7 @@ $errores=$_SESSION["errores"];
 
  <!-- cabecera igual para todas las paginas -->
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -39,12 +39,25 @@ $errores=$_SESSION["errores"];
 		   include_once("columna_izquierda.php");
 			?>
 			<div id="contenido">
+				<div id="stylized">
+				<h1>Unirse a un Grupo</h1>
+				<p>Debe introducir el nombre correspondiente al grupo.</p>
+				<div id="errores">
+			 		<?php include_once("errores_php.php"); ?>
+  				</div>
+  				
+  				<!-- Aqui empieza el nuevo contenido de crear grupo -->
+  				
+  				<p></p>
 				
 				 <!-- A partir de aqui el nuevo contenido -->
 				
 				<form name="funirgrupo" id="funirgrupo" action="unirse_a_grupo.php" method="post">
- 					Introduzca el nombre del grupo: <input type="text" id="unirte_nombre_grupo" name="unirte_nombre_grupo" size="30"/>
- 					<input type="submit" value="Unirte al grupo">
+ 					<label> Nombre del grupo:
+						<span class="small"> </span>
+					</label> 
+ 					<input type="text" id="unirte_nombre_grupo" name="unirte_nombre_grupo" size="30"/>
+ 					<button type="submit">Unirse a Grupo</button> 
 			    </form>
   
                 <!-- div para mostrar los errores en php -->
@@ -115,11 +128,13 @@ $errores=$_SESSION["errores"];
 
 
 ?>
+</div>
 
 <!-- pie igual para todas las paginas -->
 	</div>
 	<? include_once("pie.php");?>
 	</div>
+	
 </div>
 </div>
 </body>

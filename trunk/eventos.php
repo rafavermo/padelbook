@@ -56,7 +56,7 @@ if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
   				</div>
   				
   				<p></p>
-				<table id="tabla_proximos_eventos" border="1" bordercolor="gray">
+				<table id="tabla_proximos_eventos">
  					<tr>
  						<td> <b>Fecha / Hora </b> </td> 
  						<td> <b>Ciudad </b></td> 
