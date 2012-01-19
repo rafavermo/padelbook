@@ -76,7 +76,7 @@ p, h1, form, button{
 #stylized a {
     background: no-repeat scroll 0 0 #777777;
     border: 0 none;
-    clear: both;
+/*    clear: both;*/
     color: #FFFFFF;
     display: block;
     font-size: 12px;
@@ -88,6 +88,7 @@ p, h1, form, button{
     text-align: center;
     text-decoration: none;
     width: 125px;
+    float: left;
 }
 
 #stylized h2 {
