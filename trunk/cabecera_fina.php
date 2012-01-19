@@ -5,13 +5,21 @@
 		<?php
 		if(isset($_SESSION["usuario"]) && $_SESSION["usuario"]!="" ){
 			$user = $_SESSION["usuario"];?>
+			
    			<div id="menu_inicio" class="opcionactiva0">
-   					<a href="cerrar_sesion.php">Cerrar Sesion</a></div>
-   					<div id="menu_inicio" class="opcionactiva0"> 
-   					<a href="perfil.php" onclick="submit()">Perfil</a></div> 
-   					<div id="menu_inicio" class="opcionactiva0">
-   					<a href="grupos.php" onclick="submit()">Grupos</a> </div>
+ 				<a href="cerrar_sesion.php">Cerrar Sesion</a>
+ 			</div>
+ 			<div id="menu_inicio" class="opcionactiva0"> 
+ 				<a href="perfil.php" onclick="submit()">Perfil</a>
+   			</div> 
+   			<div id="menu_inicio" class="opcionactiva0">
+   				<a href="grupos.php" onclick="submit()">Grupos</a> 
+   			</div>
+   			<div id="menu_inicio" class="opcionactiva0">
+   				<a><?=$user;?></a>
+   			</div>
   		<?}else{?>
-  			<div id="menu_inicio" class="opcionactiva0"><a href="login.php">Login</a></div>
+  			<div id="menu_inicio" class="opcionactiva0">
+  				<a href="login.php">Login</a></div>
   		<?}?>
 </div>
