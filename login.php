@@ -10,6 +10,7 @@
     </title>
     <link rel="stylesheet" type="text/css" title="Original" href="estilo/Estilo_principal.css" />
     <script type="text/javascript" src="ajax.js" ></script>
+    <script type="text/javascript" src="valida_formulario.js" ></script>
     
 
 </head>
@@ -53,7 +54,7 @@ if(!isset($login)){
 					unset($_SESSION["errores"]);?>
   				</div>
   		<p></p>
-			<form id="formulario_login" name="formulario_login" action="valida_login.php" method="post"> 
+			<form id="formulario_login" name="formulario_login" action="valida_login.php" method="post" onsubmit="return validalogin(this)"> 
 				<label>Usuario: 
 					<span class="small"> </span>
 				</label>
