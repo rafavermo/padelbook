@@ -10,97 +10,51 @@
     <script type="text/javascript" src="ajax.js" ></script>
     <script type="text/javascript" src="valida_formulario.js" ></script>
     <script type="text/javascript" src="valida_crea_evento.js" ></script>
-</head>
+    
 
-  
+</head>
 <body onload=mostrarMenuConJavascript();> 
 <div class="wrapper">
 	<div class="page">
-	<div id="header">
-		<div id="logotipo">
-			
-		</div>
-		
-		<div id="logo">
-			<h1>Padelbook</h1>
-			<p><a href="">una nueva experiencia</a>
-			</p> 
-		</div>
-		<div id="iconos_redes_sociales">
-			<ul>
-				<li>
-					<a href="">
-						<img src="imagenes/twitter_icon.png" alt="twitter">
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<img src="imagenes/facebook_icon.png" alt="facebook">
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<img src="imagenes/youtube_icon.png" alt="youtube">
-					</a>
-				</li>
-			</ul>
-		</div>
-		<!-- <form id="search_mini_form" method="get" action="http://www.cooking-hacks.com/index.php/catalogsearch/result/">
-			<div class="form-search">
-				<label for="search">Search:</label>
-				<input id="search" class="input-text" type="text" value="" name="q" autocomplete="off">
-				<button class="button" title="Search" type="submit">
-				<span>
-					<span>Search</span>
-				</span>
-				</button>
-				<div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
-			</div>
-		</form> -->
-	</div>
+	<?	include_once("cabecera.php");
+		include_once("cabecera_fina.php");?>
+	
+ 		<div id="cuerpo">  
+ 			<? 
+		   include_once("columna_derecha.php");
+		   include_once("columna_izquierda.php");
+			?>
+			<div id="contenido">
+				<div id="stylized">
+				<h1>Inicio</h1>
+				<p>Bienvenido a la p&aacute;gina web PadelBook.</p>
+				
+				<h2>Si eres aficionado al padel y te gusta jugar a menudo partidos de padel
+					con tus amigos, esta es tu web.
+				En ella podras crear y unirte a los diferentes grupos donde podr&aacute;s relacionarte con tus compa&ntilde;eros y crear eventos 
+				en la que ellos se podr&aacute;n inscribir para jugar partidos de padel 
+				</h2>
+				<!-- div para mostrar errores en php y otros mensajes de exito-->
+				<?php include_once("exito.php"); ?>
+				<div id="errores">
+			 		<?php include_once("errores_php.php"); ?>
+  				</div>
+  
+				</div>
 		
 	
 
 	<!--<div id="header">
 		<h1></h1>
 	</div> -->
- 
 	
-<?php include_once("cabecera_fina.php"); ?>
-	
-	
-	<div id="cuerpo">
-		<div id="columna_izquierda">
-  			<noscript><?php include("menuindexsinjavascript.html"); ?> </noscript>
-				<!--div trasnparente que se muestra si esta activado javascript -->
- 				<div id="divmenuConJavascript" >
- 					<?php include("menuindexconjavascript.html"); ?>
- 				</div>	
-		</div> <!-- div columna_izquierda -->
-
-		<div id="columna_derecha">
-     		<ul>
-     			<li><a href="./reglamento/REGLAMENTO_JUEGO_FIP_2008.pdf">Reglamento FIP 2008</a></li>
-     	 		<li><a href="http://www.padelfip.org">Web oficial de la FIP</a></li>
-     	 		<li><a href="http://www.padelfederacion.es">Web oficial de la FEP</a></li>
-     	 		<li><a href="http://www.bwinpadelprotour.com/">Web Padel Pro Tour</a></li>
-     		</ul>
-		</div>
-
-		<div id="contenido">
-<? 			//Mostramos el mensaje de exito si existe REQUEST[exito] con algun valor determinado
-			if(isset($_REQUEST["exito"]) && $_REQUEST["exito"]!=""){
-				include_once("exito.php");
-			}
-   			//incluye en el div contenido, el contenido de la pagina especificada por $contenido (variable de sesion)
-   			   
-?>
-		</div> <!-- div Contenido -->
+			</div>
 	</div>
-	
-	<?include_once("pie.php"); ?>
+	<? include_once("pie.php");?>
 	</div>
 </div>
 
+
 </body>
 </html>
+
